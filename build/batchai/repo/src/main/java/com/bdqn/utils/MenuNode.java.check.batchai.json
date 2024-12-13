@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.utils;\n\nimport java.util.List;\n\n/**\n * 菜单节点工具类\n */\npublic class MenuNode {\n    private Integer id;//菜单编号\n    private Integer pid;//父级菜单编号\n    private String title;//菜单名称\n    private String href;//链接地址\n    private Integer spread;//是否展开\n    private String target;//打开方式\n    private String icon;//菜单图标\n    private List\u003cMenuNode\u003e child;//子菜单集合列表\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public Integer getPid() {\n        return pid;\n    }\n\n    public void setPid(Integer pid) {\n        this.pid = pid;\n    }\n\n    public String getTitle() {\n        return title;\n    }\n\n    public void setTitle(String title) {\n        this.title = title;\n    }\n\n    public String getHref() {\n        return href;\n    }\n\n    public void setHref(String href) {\n        this.href = href;\n    }\n\n    public Integer getSpread() {\n        return spread;\n    }\n\n    public void setSpread(Integer spread) {\n        this.spread = spread;\n    }\n\n    public String getTarget() {\n        return target;\n    }\n\n    public void setTarget(String target) {\n        this.target = target;\n    }\n\n    public String getIcon() {\n        return icon;\n    }\n\n    public void setIcon(String icon) {\n        this.icon = icon;\n    }\n\n    public List\u003cMenuNode\u003e getChild() {\n        return child;\n    }\n\n    public void setChild(List\u003cMenuNode\u003e child) {\n        this.child = child;\n    }\n}\n",
+    "original_code": "package com.bdqn.utils;\n\nimport java.util.List;\n\n/**\n * 菜单节点工具类\n */\npublic class MenuNode {\n    private Integer id;//菜单编号\n    private Integer pid;//父级菜单编号\n    private String title;//菜单名称\n    private String href;//链接地址\n    private Integer spread;//是否展开\n    private String target;//打开方式\n    private String icon;//菜单图标\n    private List\u003cMenuNode\u003e child;//子菜单集合列表\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public Integer getPid() {\n        return pid;\n    }\n\n    public void setPid(Integer pid) {\n        this.pid = pid;\n    }\n\n    public String getTitle() {\n        return title;\n    }\n\n    public void setTitle(String title) {\n        this.title = title;\n    }\n\n    public String getHref() {\n        return href;\n    }\n\n    public void setHref(String href) {\n        this.href = href;\n    }\n\n    public Integer getSpread() {\n        return spread;\n    }\n\n    public void setSpread(Integer spread) {\n        this.spread = spread;\n    }\n\n    public String getTarget() {\n        return target;\n    }\n\n    public void setTarget(String target) {\n        this.target = target;\n    }\n\n    public String getIcon() {\n        return icon;\n    }\n\n    public void setIcon(String icon) {\n        this.icon = icon;\n    }\n\n    public List\u003cMenuNode\u003e getChild() {\n        return child;\n    }\n\n    public void setChild(List\u003cMenuNode\u003e child) {\n        this.child = child;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/utils/MenuNode.java",
+    "model_usage_metrics": {
+        "Duration": 1048996719,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

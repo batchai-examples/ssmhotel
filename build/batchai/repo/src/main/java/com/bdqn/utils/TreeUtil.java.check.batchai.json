@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.utils;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class TreeUtil {\n\n    /**\n     * 构建菜单层级关系\n     * @param treeList      菜单列表\n     * @param pid           父级菜单编号，0表示父级菜单 (一级菜单)\n     * @return\n     */\n    public static List\u003cMenuNode\u003e toTree(List\u003cMenuNode\u003e treeList, Integer pid) {\n        List\u003cMenuNode\u003e retList = new ArrayList\u003cMenuNode\u003e();\n        for (MenuNode parent : treeList) {\n            //如果当前父级菜单编号与循环的菜单列表中的父级菜单编号一致\n            if (pid == parent.getPid()) {\n                retList.add(findChildren(parent, treeList));\n            }\n        }\n        return retList;\n    }\n\n\n    private static MenuNode findChildren(MenuNode parent, List\u003cMenuNode\u003e treeList) {\n        for (MenuNode child : treeList) {\n            if (parent.getId() == child.getPid()) {\n                if (parent.getChild() == null) {\n                    parent.setChild(new ArrayList\u003cMenuNode\u003e());\n                }\n                parent.getChild().add(findChildren(child, treeList));\n            }\n        }\n        return parent;\n    }\n}\n",
+    "original_code": "package com.bdqn.utils;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class TreeUtil {\n\n    /**\n     * 构建菜单层级关系\n     * @param treeList      菜单列表\n     * @param pid           父级菜单编号，0表示父级菜单 (一级菜单)\n     * @return\n     */\n    public static List\u003cMenuNode\u003e toTree(List\u003cMenuNode\u003e treeList, Integer pid) {\n        List\u003cMenuNode\u003e retList = new ArrayList\u003cMenuNode\u003e();\n        for (MenuNode parent : treeList) {\n            //如果当前父级菜单编号与循环的菜单列表中的父级菜单编号一致\n            if (pid == parent.getPid()) {\n                retList.add(findChildren(parent, treeList));\n            }\n        }\n        return retList;\n    }\n\n\n    private static MenuNode findChildren(MenuNode parent, List\u003cMenuNode\u003e treeList) {\n        for (MenuNode child : treeList) {\n            if (parent.getId() == child.getPid()) {\n                if (parent.getChild() == null) {\n                    parent.setChild(new ArrayList\u003cMenuNode\u003e());\n                }\n                parent.getChild().add(findChildren(child, treeList));\n            }\n        }\n        return parent;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/utils/TreeUtil.java",
+    "model_usage_metrics": {
+        "Duration": 1043750604,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

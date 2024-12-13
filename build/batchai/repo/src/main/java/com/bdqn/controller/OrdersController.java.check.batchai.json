@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.controller;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.service.OrdersService;\nimport com.bdqn.utils.SystemConstant;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.ResponseBody;\n\nimport javax.annotation.Resource;\nimport java.util.HashMap;\nimport java.util.Map;\n\n@Controller\n@RequestMapping(\"/orders\")\npublic class OrdersController {\n\n    @Resource\n    private OrdersService ordersService;\n\n    /**\n     * 添加订单\n     * @param orders\n     * @return\n     */\n    @RequestMapping(\"/addOrders\")\n    @ResponseBody\n    public String addOrders(Orders orders){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //调用添加订单的方法\n        if(ordersService.addOrders(orders)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"酒店预订成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"酒店预订失败，请重试！\");\n        }\n        return JSON.toJSONString(map);\n    }\n\n}\n",
+    "original_code": "package com.bdqn.controller;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.service.OrdersService;\nimport com.bdqn.utils.SystemConstant;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.ResponseBody;\n\nimport javax.annotation.Resource;\nimport java.util.HashMap;\nimport java.util.Map;\n\n@Controller\n@RequestMapping(\"/orders\")\npublic class OrdersController {\n\n    @Resource\n    private OrdersService ordersService;\n\n    /**\n     * 添加订单\n     * @param orders\n     * @return\n     */\n    @RequestMapping(\"/addOrders\")\n    @ResponseBody\n    public String addOrders(Orders orders){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //调用添加订单的方法\n        if(ordersService.addOrders(orders)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"酒店预订成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"酒店预订失败，请重试！\");\n        }\n        return JSON.toJSONString(map);\n    }\n\n}\n",
+    "path": "src/main/java/com/bdqn/controller/OrdersController.java",
+    "model_usage_metrics": {
+        "Duration": 1360605076,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

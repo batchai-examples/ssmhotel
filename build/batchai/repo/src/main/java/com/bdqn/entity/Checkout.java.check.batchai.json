@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.entity;\n\nimport java.util.Date;\n\npublic class Checkout {\n\n    private Long id;\n    private String checkOutNumber;\n    private Long checkInId;\n    private Double consumePrice;\n    private Date createDate;\n    private Integer createdBy;\n    private String remark;\n\n\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    public Long getId() {\n        return id;\n    }\n\n    public void setId(Long id) {\n        this.id = id;\n    }\n\n    public String getCheckOutNumber() {\n        return checkOutNumber;\n    }\n\n    public void setCheckOutNumber(String checkOutNumber) {\n        this.checkOutNumber = checkOutNumber;\n    }\n\n    public Long getCheckInId() {\n        return checkInId;\n    }\n\n    public void setCheckInId(Long checkInId) {\n        this.checkInId = checkInId;\n    }\n\n    public Double getConsumePrice() {\n        return consumePrice;\n    }\n\n    public void setConsumePrice(Double consumePrice) {\n        this.consumePrice = consumePrice;\n    }\n\n    public Integer getCreatedBy() {\n        return createdBy;\n    }\n\n    public void setCreatedBy(Integer createdBy) {\n        this.createdBy = createdBy;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "original_code": "package com.bdqn.entity;\n\nimport java.util.Date;\n\npublic class Checkout {\n\n    private Long id;\n    private String checkOutNumber;\n    private Long checkInId;\n    private Double consumePrice;\n    private Date createDate;\n    private Integer createdBy;\n    private String remark;\n\n\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    public Long getId() {\n        return id;\n    }\n\n    public void setId(Long id) {\n        this.id = id;\n    }\n\n    public String getCheckOutNumber() {\n        return checkOutNumber;\n    }\n\n    public void setCheckOutNumber(String checkOutNumber) {\n        this.checkOutNumber = checkOutNumber;\n    }\n\n    public Long getCheckInId() {\n        return checkInId;\n    }\n\n    public void setCheckInId(Long checkInId) {\n        this.checkInId = checkInId;\n    }\n\n    public Double getConsumePrice() {\n        return consumePrice;\n    }\n\n    public void setConsumePrice(Double consumePrice) {\n        this.consumePrice = consumePrice;\n    }\n\n    public Integer getCreatedBy() {\n        return createdBy;\n    }\n\n    public void setCreatedBy(Integer createdBy) {\n        this.createdBy = createdBy;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/entity/Checkout.java",
+    "model_usage_metrics": {
+        "Duration": 1041962179,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

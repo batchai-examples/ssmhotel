@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.entity;\n\npublic class Floor {\n    private Integer id;\n    private String name;\n    private String remark;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "original_code": "package com.bdqn.entity;\n\npublic class Floor {\n    private Integer id;\n    private String name;\n    private String remark;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/entity/Floor.java",
+    "model_usage_metrics": {
+        "Duration": 1422041504,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

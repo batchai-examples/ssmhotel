@@ -1,0 +1,39 @@
+{
+    "has_issue": true,
+    "overall_severity": "major",
+    "issues": [
+        {
+            "short_description": "Potential SQL Injection Risk",
+            "detailed_explaination": "The method `batchConfirm` constructs a SQL query using string concatenation, which can lead to SQL injection if the input is not properly sanitized.",
+            "suggestion": "Use parameterized queries or prepared statements to prevent SQL injection.",
+            "issue_line_begin": 48,
+            "issue_line_end": 53,
+            "issue_reference_urls": [
+                "https://owasp.org/www-community/vulnerabilities/SQL_Injection"
+            ],
+            "severity": "major",
+            "severity_reason": "The method constructs a SQL query using string concatenation, which can lead to SQL injection."
+        }
+    ],
+    "fixed_code": "package com.bdqn.controller.admin;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.service.OrdersService;\nimport com.bdqn.utils.DataGridViewResult;\nimport com.bdqn.utils.SystemConstant;\nimport com.bdqn.vo.OrdersVo;\nimport com.github.pagehelper.PageHelper;\nimport com.github.pagehelper.PageInfo;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport javax.annotation.Resource;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n@RestController\n@RequestMapping(\"/admin/orders\")\npublic class OrdersAdminController {\n\n    @Resource\n    private OrdersService ordersService;\n\n    /**\n     * 查询订单列表\n     * @param ordersVo\n     * @return\n     */\n    @RequestMapping(\"/list\")\n    public DataGridViewResult list(OrdersVo ordersVo){\n        //设置分页信息\n        PageHelper.startPage(ordersVo.getPage(),ordersVo.getLimit());\n        //调用分页查询订单列表的方法\n        List\u003cOrders\u003e ordersList = ordersService.findOrdersList(ordersVo);\n        //创建分页对象\n        PageInfo\u003cOrders\u003e pageInfo = new PageInfo\u003cOrders\u003e(ordersList);\n        //返回数据\n        return new DataGridViewResult(pageInfo.getTotal(),pageInfo.getList());\n    }\n\n    /**\n     * 确认订单\n     * @param orders\n     * @return\n     */\n    @RequestMapping(\"/confirmOrders\")\n    public String confirmOrders(Orders orders){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //将订单状态改成已确认(status=2)\n        orders.setStatus(2);\n        //调用修改的方法\n        if(ordersService.updateOrders(orders)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"订单确认成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"订单确认失败\");\n        }\n        return JSON.toJSONString(map);\n    }\n\n\n    /**\n     * 批量确认订单\n     * @param ids\n     * @return\n     */\n    @RequestMapping(\"/batchConfirm\")\n    public String batchConfirm(String ids){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        int count = 0;\n        //将字符串拆分成数组\n        String[] idsStr = ids.split(\",\");\n        //循环确认\n        for (int i = 0; i \u003c idsStr.length; i++) {\n            //创建Orders对象\n            Orders orders = new Orders();\n            orders.setStatus(2);//已确认\n            orders.setId(Integer.valueOf(idsStr[i]));\n            //调用修改订单的方法\n            count += ordersService.updateOrders(orders);\n        }\n\n        //判断受影响行数是否大于0\n        if(count\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"订单确认成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"订单确认失败\");\n        }\n\n        return JSON.toJSONString(map);\n    }\n\n}\n",
+    "original_code": "package com.bdqn.controller.admin;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.service.OrdersService;\nimport com.bdqn.utils.DataGridViewResult;\nimport com.bdqn.utils.SystemConstant;\nimport com.bdqn.vo.OrdersVo;\nimport com.github.pagehelper.PageHelper;\nimport com.github.pagehelper.PageInfo;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport javax.annotation.Resource;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n@RestController\n@RequestMapping(\"/admin/orders\")\npublic class OrdersAdminController {\n\n    @Resource\n    private OrdersService ordersService;\n\n    /**\n     * 查询订单列表\n     * @param ordersVo\n     * @return\n     */\n    @RequestMapping(\"/list\")\n    public DataGridViewResult list(OrdersVo ordersVo){\n        //设置分页信息\n        PageHelper.startPage(ordersVo.getPage(),ordersVo.getLimit());\n        //调用分页查询订单列表的方法\n        List\u003cOrders\u003e ordersList = ordersService.findOrdersList(ordersVo);\n        //创建分页对象\n        PageInfo\u003cOrders\u003e pageInfo = new PageInfo\u003cOrders\u003e(ordersList);\n        //返回数据\n        return new DataGridViewResult(pageInfo.getTotal(),pageInfo.getList());\n    }\n\n    /**\n     * 确认订单\n     * @param orders\n     * @return\n     */\n    @RequestMapping(\"/confirmOrders\")\n    public String confirmOrders(Orders orders){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //将订单状态改成已确认(status=2)\n        orders.setStatus(2);\n        //调用修改的方法\n        if(ordersService.updateOrders(orders)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"订单确认成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"订单确认失败\");\n        }\n        return JSON.toJSONString(map);\n    }\n\n\n    /**\n     * 批量确认订单\n     * @param ids\n     * @return\n     */\n    @RequestMapping(\"/batchConfirm\")\n    public String batchConfirm(String ids){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        int count = 0;\n        //将字符串拆分成数组\n        String[] idsStr = ids.split(\",\");\n        //循环确认\n        for (int i = 0; i \u003c idsStr.length; i++) {\n            //创建Orders对象\n            Orders orders = new Orders();\n            orders.setStatus(2);//已确认\n            orders.setId(Integer.valueOf(idsStr[i]));\n            //调用修改订单的方法\n            count = ordersService.updateOrders(orders);\n            //判断受影响行数是否大于0\n            if(count\u003e0){\n                map.put(SystemConstant.SUCCESS,true);\n                map.put(SystemConstant.MESSAGE,\"订单确认成功\");\n            }\n        }\n\n        //判断受影响行数是否小于0\n        if(count\u003c=0){\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"订单确认失败\");\n        }\n\n        return JSON.toJSONString(map);\n    }\n\n}\n",
+    "path": "src/main/java/com/bdqn/controller/admin/OrdersAdminController.java",
+    "model_usage_metrics": {
+        "Duration": 14596349510,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Orders;\nimport com.bdqn.vo.OrdersVo;\n\nimport java.util.List;\n\npublic interface OrdersService {\n    /**\n     * 添加订单\n     * @param orders\n     * @return\n     */\n    int addOrders(Orders orders);\n\n    /**\n     * 查询订单列表\n     * @param ordersVo\n     * @return\n     */\n    List\u003cOrders\u003e findOrdersList(OrdersVo ordersVo);\n\n    /**\n     * 修改订单\n     * @param orders\n     * @return\n     */\n    int updateOrders(Orders orders);\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Orders;\nimport com.bdqn.vo.OrdersVo;\n\nimport java.util.List;\n\npublic interface OrdersService {\n    /**\n     * 添加订单\n     * @param orders\n     * @return\n     */\n    int addOrders(Orders orders);\n\n    /**\n     * 查询订单列表\n     * @param ordersVo\n     * @return\n     */\n    List\u003cOrders\u003e findOrdersList(OrdersVo ordersVo);\n\n    /**\n     * 修改订单\n     * @param orders\n     * @return\n     */\n    int updateOrders(Orders orders);\n}\n",
+    "path": "src/main/java/com/bdqn/service/OrdersService.java",
+    "model_usage_metrics": {
+        "Duration": 1105111912,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

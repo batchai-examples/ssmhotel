@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.RoleMapper;\nimport com.bdqn.entity.Role;\nimport com.bdqn.service.RoleService;\nimport com.bdqn.vo.RoleVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\nimport java.util.Map;\n\n\n@Service\n@Transactional\npublic class RoleServiceImpl implements RoleService {\n\n    @Resource\n    private RoleMapper roleMapper;\n\n    /**\n     * 查询角色列表\n     *\n     * @param roleVo\n     * @return\n     */\n    public List\u003cRole\u003e findRoleList(RoleVo roleVo) {\n        return roleMapper.findRoleList(roleVo);\n    }\n\n    public int addRole(Role role) {\n        return roleMapper.addRole(role);\n    }\n\n    public int updateRole(Role role) {\n        return roleMapper.updateRole(role);\n    }\n\n    public int deleteById(Integer id) {\n        return roleMapper.deleteById(id);\n    }\n\n    public int saveRoleMenu(String ids, Integer roleId) {\n        try {\n            //删除原有的菜单关系\n            roleMapper.deleteRoleMenu(roleId);//根据角色ID删除\n            //将ids拆分成数组\n            String [] idsStr = ids.split(\",\");\n            //循环调用\n            for (int i = 0; i \u003cidsStr.length ; i++) {\n                //调用保存菜单角色关系的方法\n                roleMapper.addRoleMenu(roleId,idsStr[i]);\n            }\n            return 1;//成功\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n        return 0;//失败\n    }\n\n    public List\u003cMap\u003cString, Object\u003e\u003e findRoleListByMap() {\n        return roleMapper.findRoleListByMap();\n    }\n\n    public List\u003cInteger\u003e findEmployeeRoleByEmployeeId(Integer employeeId) {\n        return roleMapper.findEmployeeRoleByEmployeeId(employeeId);\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.RoleMapper;\nimport com.bdqn.entity.Role;\nimport com.bdqn.service.RoleService;\nimport com.bdqn.vo.RoleVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\nimport java.util.Map;\n\n\n@Service\n@Transactional\npublic class RoleServiceImpl implements RoleService {\n\n    @Resource\n    private RoleMapper roleMapper;\n\n    /**\n     * 查询角色列表\n     *\n     * @param roleVo\n     * @return\n     */\n    public List\u003cRole\u003e findRoleList(RoleVo roleVo) {\n        return roleMapper.findRoleList(roleVo);\n    }\n\n    public int addRole(Role role) {\n        return roleMapper.addRole(role);\n    }\n\n    public int updateRole(Role role) {\n        return roleMapper.updateRole(role);\n    }\n\n    public int deleteById(Integer id) {\n        return roleMapper.deleteById(id);\n    }\n\n    public int saveRoleMenu(String ids, Integer roleId) {\n        try {\n            //删除原有的菜单关系\n            roleMapper.deleteRoleMenu(roleId);//根据角色ID删除\n            //将ids拆分成数组\n            String [] idsStr = ids.split(\",\");\n            //循环调用\n            for (int i = 0; i \u003cidsStr.length ; i++) {\n                //调用保存菜单角色关系的方法\n                roleMapper.addRoleMenu(roleId,idsStr[i]);\n            }\n            return 1;//成功\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n        return 0;//失败\n    }\n\n    public List\u003cMap\u003cString, Object\u003e\u003e findRoleListByMap() {\n        return roleMapper.findRoleListByMap();\n    }\n\n    public List\u003cInteger\u003e findEmployeeRoleByEmployeeId(Integer employeeId) {\n        return roleMapper.findEmployeeRoleByEmployeeId(employeeId);\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/RoleServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1096835962,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

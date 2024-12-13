@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.entity;\n\nimport java.util.Date;\n\npublic class User {\n    private Long id;\n    private String loginName;\n    private String password;\n    private String realName;\n    private String idCard;\n    private String phone;\n    private String email;\n    private Integer status;\n    private Date createDate;\n    private String salt;\n\n    public Long getId() {\n        return id;\n    }\n\n    public void setId(Long id) {\n        this.id = id;\n    }\n\n    public String getLoginName() {\n        return loginName;\n    }\n\n    public void setLoginName(String loginName) {\n        this.loginName = loginName;\n    }\n\n    public String getPassword() {\n        return password;\n    }\n\n    public void setPassword(String password) {\n        this.password = password;\n    }\n\n    public String getRealName() {\n        return realName;\n    }\n\n    public void setRealName(String realName) {\n        this.realName = realName;\n    }\n\n    public String getIdCard() {\n        return idCard;\n    }\n\n    public void setIdCard(String idCard) {\n        this.idCard = idCard;\n    }\n\n    public String getPhone() {\n        return phone;\n    }\n\n    public void setPhone(String phone) {\n        this.phone = phone;\n    }\n\n    public String getEmail() {\n        return email;\n    }\n\n    public void setEmail(String email) {\n        this.email = email;\n    }\n\n    public Integer getStatus() {\n        return status;\n    }\n\n    public void setStatus(Integer status) {\n        this.status = status;\n    }\n\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    public String getSalt() {\n        return salt;\n    }\n\n    public void setSalt(String salt) {\n        this.salt = salt;\n    }\n}\n",
+    "original_code": "package com.bdqn.entity;\n\nimport java.util.Date;\n\npublic class User {\n    private Long id;\n    private String loginName;\n    private String password;\n    private String realName;\n    private String idCard;\n    private String phone;\n    private String email;\n    private Integer status;\n    private Date createDate;\n    private String salt;\n\n    public Long getId() {\n        return id;\n    }\n\n    public void setId(Long id) {\n        this.id = id;\n    }\n\n    public String getLoginName() {\n        return loginName;\n    }\n\n    public void setLoginName(String loginName) {\n        this.loginName = loginName;\n    }\n\n    public String getPassword() {\n        return password;\n    }\n\n    public void setPassword(String password) {\n        this.password = password;\n    }\n\n    public String getRealName() {\n        return realName;\n    }\n\n    public void setRealName(String realName) {\n        this.realName = realName;\n    }\n\n    public String getIdCard() {\n        return idCard;\n    }\n\n    public void setIdCard(String idCard) {\n        this.idCard = idCard;\n    }\n\n    public String getPhone() {\n        return phone;\n    }\n\n    public void setPhone(String phone) {\n        this.phone = phone;\n    }\n\n    public String getEmail() {\n        return email;\n    }\n\n    public void setEmail(String email) {\n        this.email = email;\n    }\n\n    public Integer getStatus() {\n        return status;\n    }\n\n    public void setStatus(Integer status) {\n        this.status = status;\n    }\n\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    public String getSalt() {\n        return salt;\n    }\n\n    public void setSalt(String salt) {\n        this.salt = salt;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/entity/User.java",
+    "model_usage_metrics": {
+        "Duration": 1387908409,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

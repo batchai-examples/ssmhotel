@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.ChartsMapper;\nimport com.bdqn.service.ChartsService;\nimport com.bdqn.vo.PieChartsVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\nimport java.util.Map;\n\n\n@Service\n@Transactional\npublic class ChartsServiceImpl implements ChartsService {\n\n    @Resource\n    private ChartsMapper chartsMapper;\n\n    /**\n     * 查询每个年度总营业额\n     *\n     * @return\n     */\n    public List\u003cMap\u003e getTotalPriceByYear() {\n        return chartsMapper.getTotalPriceByYear();\n    }\n\n    public List\u003cDouble\u003e getTotalPriceByYearOfMonth(String year) {\n        return chartsMapper.getTotalPriceByYearOfMonth(year);\n    }\n\n    public List\u003cMap\u003e getQuarterTotalPriceByYear(String year) {\n        return chartsMapper.getQuarterTotalPriceByYear(year);\n    }\n\n    public List\u003cPieChartsVo\u003e getRoomTypeCountByYearAndMonth(String year) {\n        return chartsMapper.getRoomTypeCountByYearAndMonth(year);\n    }\n\n    public List\u003cPieChartsVo\u003e getCurrentDateHotelByDate(String date) {\n        return chartsMapper.getCurrentDateHotelByDate(date);\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.ChartsMapper;\nimport com.bdqn.service.ChartsService;\nimport com.bdqn.vo.PieChartsVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\nimport java.util.Map;\n\n\n@Service\n@Transactional\npublic class ChartsServiceImpl implements ChartsService {\n\n    @Resource\n    private ChartsMapper chartsMapper;\n\n    /**\n     * 查询每个年度总营业额\n     *\n     * @return\n     */\n    public List\u003cMap\u003e getTotalPriceByYear() {\n        return chartsMapper.getTotalPriceByYear();\n    }\n\n    public List\u003cDouble\u003e getTotalPriceByYearOfMonth(String year) {\n        return chartsMapper.getTotalPriceByYearOfMonth(year);\n    }\n\n    public List\u003cMap\u003e getQuarterTotalPriceByYear(String year) {\n        return chartsMapper.getQuarterTotalPriceByYear(year);\n    }\n\n    public List\u003cPieChartsVo\u003e getRoomTypeCountByYearAndMonth(String year) {\n        return chartsMapper.getRoomTypeCountByYearAndMonth(year);\n    }\n\n    public List\u003cPieChartsVo\u003e getCurrentDateHotelByDate(String date) {\n        return chartsMapper.getCurrentDateHotelByDate(date);\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/ChartsServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1067275270,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

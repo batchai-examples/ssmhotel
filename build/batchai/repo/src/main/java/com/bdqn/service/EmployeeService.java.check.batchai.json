@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Employee;\nimport com.bdqn.vo.EmployeeVo;\n\nimport java.util.List;\n\npublic interface EmployeeService {\n\n    /**\n     * 员工登录\n     * @param loginName\n     * @param loginPwd\n     * @return\n     */\n    Employee login(String loginName,String loginPwd);\n\n    /**\n     * 根据部门编号查询员工数量\n     * @param deptId\n     * @return\n     */\n    int getEmployeeCountByDeptId(Integer deptId);\n\n    /**\n     * 根据角色编号查询员工数量\n     * @param roleId\n     * @return\n     */\n    int getEmployeeCountByRoleId(Integer roleId);\n\n    /**\n     * 查询员工列表\n     * @param employeeVo\n     * @return\n     */\n    List\u003cEmployee\u003e findEmployeeList(EmployeeVo employeeVo);\n\n    /**\n     * 添加员工\n     * @param employee\n     * @return\n     */\n    int addEmployee(Employee employee);\n\n    /**\n     * 修改员工\n     * @param employee\n     * @return\n     */\n    int updateEmployee(Employee employee);\n\n    /**\n     * 删除员工\n     * @param id\n     * @return\n     */\n    int deleteById(Integer id);\n\n    /**\n     * 重置密码\n     * @param id\n     * @return\n     */\n    int resetPwd(int id);\n\n    /**\n     * 保存员工角色关系\n     * @param roleIds\n     * @param empId\n     * @return\n     */\n    boolean saveEmployeeRole(String roleIds, Integer empId);\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Employee;\nimport com.bdqn.vo.EmployeeVo;\n\nimport java.util.List;\n\npublic interface EmployeeService {\n\n    /**\n     * 员工登录\n     * @param loginName\n     * @param loginPwd\n     * @return\n     */\n    Employee login(String loginName,String loginPwd);\n\n    /**\n     * 根据部门编号查询员工数量\n     * @param deptId\n     * @return\n     */\n    int getEmployeeCountByDeptId(Integer deptId);\n\n    /**\n     * 根据角色编号查询员工数量\n     * @param roleId\n     * @return\n     */\n    int getEmployeeCountByRoleId(Integer roleId);\n\n    /**\n     * 查询员工列表\n     * @param employeeVo\n     * @return\n     */\n    List\u003cEmployee\u003e findEmployeeList(EmployeeVo employeeVo);\n\n    /**\n     * 添加员工\n     * @param employee\n     * @return\n     */\n    int addEmployee(Employee employee);\n\n    /**\n     * 修改员工\n     * @param employee\n     * @return\n     */\n    int updateEmployee(Employee employee);\n\n    /**\n     * 删除员工\n     * @param id\n     * @return\n     */\n    int deleteById(Integer id);\n\n    /**\n     * 重置密码\n     * @param id\n     * @return\n     */\n    int resetPwd(int id);\n\n    /**\n     * 保存员工角色关系\n     * @param roleIds\n     * @param empId\n     * @return\n     */\n    boolean saveEmployeeRole(String roleIds, Integer empId);\n}\n",
+    "path": "src/main/java/com/bdqn/service/EmployeeService.java",
+    "model_usage_metrics": {
+        "Duration": 1116690276,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.controller;\n\nimport com.bdqn.entity.Floor;\nimport com.bdqn.entity.Room;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.FloorService;\nimport com.bdqn.service.RoomService;\nimport com.bdqn.service.RoomTypeService;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.ui.Model;\nimport org.springframework.web.bind.annotation.RequestMapping;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n@Controller\npublic class IndexController {\n\n\n    @Resource\n    private RoomTypeService roomTypeService;\n\n    @Resource\n    private FloorService floorService;\n\n    @Resource\n    private RoomService roomService;\n\n\n    @RequestMapping(\"/index.html\")\n    public String index(Model model){\n        //调用查询房型列表的方法\n        List\u003cRoomType\u003e roomTypeList = roomTypeService.findRoomTypeList(null);\n        //调用查询所有楼层列表的方法\n        List\u003cFloor\u003e floorList = floorService.findFloorList(null);\n        //调用查询每个楼层的房间列表\n        List\u003cRoom\u003e roomList = roomService.findRoomListByFloorId(1); // 假设提供一个默认参数\n        //将数据放到模型中\n        model.addAttribute(\"roomTypeList\",roomTypeList);\n        model.addAttribute(\"floorList\",floorList);\n        model.addAttribute(\"roomList\",roomList);\n        return \"forward:/home.jsp\";\n    }\n\n}\n",
+    "original_code": "package com.bdqn.controller;\n\nimport com.bdqn.entity.Floor;\nimport com.bdqn.entity.Room;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.FloorService;\nimport com.bdqn.service.RoomService;\nimport com.bdqn.service.RoomTypeService;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.ui.Model;\nimport org.springframework.web.bind.annotation.RequestMapping;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n@Controller\npublic class IndexController {\n\n\n    @Resource\n    private RoomTypeService roomTypeService;\n\n    @Resource\n    private FloorService floorService;\n\n    @Resource\n    private RoomService roomService;\n\n\n    @RequestMapping(\"/index.html\")\n    public String index(Model model){\n        //调用查询房型列表的方法\n        List\u003cRoomType\u003e roomTypeList = roomTypeService.findRoomTypeList(null);\n        //调用查询所有楼层列表的方法\n        List\u003cFloor\u003e floorList = floorService.findFloorList(null);\n        //调用查询每个楼层的房间列表\n        List\u003cRoom\u003e roomList = roomService.findRoomListByFloorId(1); // 假设提供一个默认参数\n        //将数据放到模型中\n        model.addAttribute(\"roomTypeList\",roomTypeList);\n        model.addAttribute(\"floorList\",floorList);\n        model.addAttribute(\"roomList\",roomList);\n        return \"forward:/home.jsp\";\n    }\n\n}\n",
+    "path": "src/main/java/com/bdqn/controller/IndexController.java",
+    "model_usage_metrics": {
+        "Duration": 1043415195,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

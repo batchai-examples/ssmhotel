@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.dao;\n\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.vo.RoomTypeVo;\nimport org.apache.ibatis.annotations.Select;\n\nimport java.util.List;\n\npublic interface RoomTypeMapper {\n\n    /**\n     * 查询房型列表\n     * @param roomTypeVo\n     * @return\n     */\n    List\u003cRoomType\u003e findRoomTypeList(RoomTypeVo roomTypeVo);\n\n    /**\n     * 添加房型\n     * @param roomType\n     * @return\n     */\n    int addRoomType(RoomType roomType);\n    /**\n     * 修改房型\n     * @param roomType\n     * @return\n     */\n    int updateRoomType(RoomType roomType);\n\n    /**\n     * 根据房型ID查询房型信息\n     * @param roomtypeid\n     * @return\n     */\n    @Select(\"select * from t_room_type where id = #{id}\")\n    RoomType findById(Integer roomtypeid);\n}\n",
+    "original_code": "package com.bdqn.dao;\n\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.vo.RoomTypeVo;\nimport org.apache.ibatis.annotations.Select;\n\nimport java.util.List;\n\npublic interface RoomTypeMapper {\n\n    /**\n     * 查询房型列表\n     * @param roomTypeVo\n     * @return\n     */\n    List\u003cRoomType\u003e findRoomTypeList(RoomTypeVo roomTypeVo);\n\n    /**\n     * 添加房型\n     * @param roomType\n     * @return\n     */\n    int addRoomType(RoomType roomType);\n    /**\n     * 修改房型\n     * @param roomType\n     * @return\n     */\n    int updateRoomType(RoomType roomType);\n\n    /**\n     * 根据房型ID查询房型信息\n     * @param roomtypeid\n     * @return\n     */\n    @Select(\"select * from t_room_type where id = #{id}\")\n    RoomType findById(Integer roomtypeid);\n}\n",
+    "path": "src/main/java/com/bdqn/dao/RoomTypeMapper.java",
+    "model_usage_metrics": {
+        "Duration": 1338632389,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

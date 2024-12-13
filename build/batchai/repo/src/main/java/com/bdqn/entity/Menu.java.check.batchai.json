@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.entity;\n\npublic class Menu {\n    private Integer id;\n    private Integer pid;\n    private String title;\n    private String href;\n    private Integer spread;\n    private String target;\n    private String icon;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public Integer getPid() {\n        return pid;\n    }\n\n    public void setPid(Integer pid) {\n        this.pid = pid;\n    }\n\n    public String getTitle() {\n        return title;\n    }\n\n    public void setTitle(String title) {\n        this.title = title;\n    }\n\n    public String getHref() {\n        return href;\n    }\n\n    public void setHref(String href) {\n        this.href = href;\n    }\n\n    public Integer getSpread() {\n        return spread;\n    }\n\n    public void setSpread(Integer spread) {\n        this.spread = spread;\n    }\n\n    public String getTarget() {\n        return target;\n    }\n\n    public void setTarget(String target) {\n        this.target = target;\n    }\n\n    public String getIcon() {\n        return icon;\n    }\n\n    public void setIcon(String icon) {\n        this.icon = icon;\n    }\n}\n",
+    "original_code": "package com.bdqn.entity;\n\npublic class Menu {\n    private Integer id;\n    private Integer pid;\n    private String title;\n    private String href;\n    private Integer spread;\n    private String target;\n    private String icon;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public Integer getPid() {\n        return pid;\n    }\n\n    public void setPid(Integer pid) {\n        this.pid = pid;\n    }\n\n    public String getTitle() {\n        return title;\n    }\n\n    public void setTitle(String title) {\n        this.title = title;\n    }\n\n    public String getHref() {\n        return href;\n    }\n\n    public void setHref(String href) {\n        this.href = href;\n    }\n\n    public Integer getSpread() {\n        return spread;\n    }\n\n    public void setSpread(Integer spread) {\n        this.spread = spread;\n    }\n\n    public String getTarget() {\n        return target;\n    }\n\n    public void setTarget(String target) {\n        this.target = target;\n    }\n\n    public String getIcon() {\n        return icon;\n    }\n\n    public void setIcon(String icon) {\n        this.icon = icon;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/entity/Menu.java",
+    "model_usage_metrics": {
+        "Duration": 1164094885,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

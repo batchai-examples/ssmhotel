@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "{\n  \"code\": 1,\n  \"msg\": \"服务端清理缓存成功\"\n}\n",
+    "original_code": "{\n  \"code\": 1,\n  \"msg\": \"服务端清理缓存成功\"\n}\n",
+    "path": "target/ssm_hotel-1.0-SNAPSHOT/statics/layui/api/clear.json",
+    "model_usage_metrics": {
+        "Duration": 673025495,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

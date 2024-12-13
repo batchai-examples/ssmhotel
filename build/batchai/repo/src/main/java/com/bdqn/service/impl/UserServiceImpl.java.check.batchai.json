@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.UserMapper;\nimport com.bdqn.entity.User;\nimport com.bdqn.service.UserService;\nimport com.bdqn.utils.PasswordUtil;\nimport com.bdqn.utils.SystemConstant;\nimport com.bdqn.utils.UUIDUtils;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\n\n@Service\n@Transactional\npublic class UserServiceImpl implements UserService {\n\n    @Resource\n    private UserMapper userMapper;\n\n    /**\n     * 添加用户\n     *\n     * @param user\n     * @return\n     */\n    public int addUser(User user) {\n        //自动生成盐值\n        user.setSalt(UUIDUtils.randomUUID());//shiro安全验证框架\n        //密码加密\n        user.setPassword(PasswordUtil.md5(user.getPassword(),user.getSalt(), SystemConstant.PASSWORD_COUNT));\n        return userMapper.addUser(user);\n    }\n\n    public User findUserByName(String loginName) {\n        return userMapper.findUserByName(loginName);\n    }\n\n    public User login(String loginName, String password) {\n        //调用查询用户信息的方法\n        User loginUser = userMapper.findUserByName(loginName);\n        //判断对象是否为空\n        if(loginUser!=null){\n            //密码加密\n            String newPassword = PasswordUtil.md5(password, loginUser.getSalt(),SystemConstant.PASSWORD_COUNT);\n            //比较密码是否相等\n            if(loginUser.getPassword().equals(newPassword)){\n                return loginUser;\n            }\n        }\n        return null;\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.UserMapper;\nimport com.bdqn.entity.User;\nimport com.bdqn.service.UserService;\nimport com.bdqn.utils.PasswordUtil;\nimport com.bdqn.utils.SystemConstant;\nimport com.bdqn.utils.UUIDUtils;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\n\n@Service\n@Transactional\npublic class UserServiceImpl implements UserService {\n\n    @Resource\n    private UserMapper userMapper;\n\n    /**\n     * 添加用户\n     *\n     * @param user\n     * @return\n     */\n    public int addUser(User user) {\n        //自动生成盐值\n        user.setSalt(UUIDUtils.randomUUID());//shiro安全验证框架\n        //密码加密\n        user.setPassword(PasswordUtil.md5(user.getPassword(),user.getSalt(), SystemConstant.PASSWORD_COUNT));\n        return userMapper.addUser(user);\n    }\n\n    public User findUserByName(String loginName) {\n        return userMapper.findUserByName(loginName);\n    }\n\n    public User login(String loginName, String password) {\n        //调用查询用户信息的方法\n        User loginUser = userMapper.findUserByName(loginName);\n        //判断对象是否为空\n        if(loginUser!=null){\n            //密码加密\n            String newPassword = PasswordUtil.md5(password, loginUser.getSalt(),SystemConstant.PASSWORD_COUNT);\n            //比较密码是否相等\n            if(loginUser.getPassword().equals(newPassword)){\n                return loginUser;\n            }\n        }\n        return null;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/UserServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1121687874,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

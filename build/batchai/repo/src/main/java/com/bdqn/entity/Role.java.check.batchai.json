@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.entity;\n\npublic class Role {\n    private Integer id;\n    private String roleName;\n    private String roleDesc;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getRoleName() {\n        return roleName;\n    }\n\n    public void setRoleName(String roleName) {\n        this.roleName = roleName;\n    }\n\n    public String getRoleDesc() {\n        return roleDesc;\n    }\n\n    public void setRoleDesc(String roleDesc) {\n        this.roleDesc = roleDesc;\n    }\n}\n",
+    "original_code": "package com.bdqn.entity;\n\npublic class Role {\n    private Integer id;\n    private String roleName;\n    private String roleDesc;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getRoleName() {\n        return roleName;\n    }\n\n    public void setRoleName(String roleName) {\n        this.roleName = roleName;\n    }\n\n    public String getRoleDesc() {\n        return roleDesc;\n    }\n\n    public void setRoleDesc(String roleDesc) {\n        this.roleDesc = roleDesc;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/entity/Role.java",
+    "model_usage_metrics": {
+        "Duration": 1315681826,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

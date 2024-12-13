@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.utils;\n\n/**\n * layui 数据表格类\n */\npublic class DataGridViewResult {\n    private Integer code=0;//执行状态码\n    private String msg=\"\";//提示信息\n    private Long count=0L;//数量\n    private Object data;//数据\n\n    public Integer getCode() {\n        return code;\n    }\n\n    public void setCode(Integer code) {\n        this.code = code;\n    }\n\n    public String getMsg() {\n        return msg;\n    }\n\n    public void setMsg(String msg) {\n        this.msg = msg;\n    }\n\n    public Long getCount() {\n        return count;\n    }\n\n    public void setCount(Long count) {\n        this.count = count;\n    }\n\n    public Object getData() {\n        return data;\n    }\n\n    public void setData(Object data) {\n        this.data = data;\n    }\n\n    /**\n     * 创建数据表格对象\n     * @param count     数据总数量\n     * @param data      数据集合列表\n     */\n    public DataGridViewResult(Long count, Object data) {\n        super();\n        this.count = count;\n        this.data = data;\n    }\n    public DataGridViewResult(Object data) {\n        super();\n        this.data = data;\n    }\n\n    public DataGridViewResult() {\n    }\n}\n",
+    "original_code": "package com.bdqn.utils;\n\n/**\n * layui 数据表格类\n */\npublic class DataGridViewResult {\n    private Integer code=0;//执行状态码\n    private String msg=\"\";//提示信息\n    private Long count=0L;//数量\n    private Object data;//数据\n\n    public Integer getCode() {\n        return code;\n    }\n\n    public void setCode(Integer code) {\n        this.code = code;\n    }\n\n    public String getMsg() {\n        return msg;\n    }\n\n    public void setMsg(String msg) {\n        this.msg = msg;\n    }\n\n    public Long getCount() {\n        return count;\n    }\n\n    public void setCount(Long count) {\n        this.count = count;\n    }\n\n    public Object getData() {\n        return data;\n    }\n\n    public void setData(Object data) {\n        this.data = data;\n    }\n\n    /**\n     * 创建数据表格对象\n     * @param count     数据总数量\n     * @param data      数据集合列表\n     */\n    public DataGridViewResult(Long count, Object data) {\n        super();\n        this.count = count;\n        this.data = data;\n    }\n    public DataGridViewResult(Object data) {\n        super();\n        this.data = data;\n    }\n\n    public DataGridViewResult() {\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/utils/DataGridViewResult.java",
+    "model_usage_metrics": {
+        "Duration": 1042265745,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003cproject version=\"4\"\u003e\n  \u003ccomponent name=\"ExternalStorageConfigurationManager\" enabled=\"true\" /\u003e\n  \u003ccomponent name=\"FrameworkDetectionExcludesConfiguration\"\u003e\n    \u003cfile type=\"web\" url=\"file://$PROJECT_DIR$\" /\u003e\n  \u003c/component\u003e\n  \u003ccomponent name=\"MavenProjectsManager\"\u003e\n    \u003coption name=\"originalFiles\"\u003e\n      \u003clist\u003e\n        \u003coption value=\"$PROJECT_DIR$/pom.xml\" /\u003e\n      \u003c/list\u003e\n    \u003c/option\u003e\n  \u003c/component\u003e\n  \u003ccomponent name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\"\u003e\n    \u003coutput url=\"file://$PROJECT_DIR$/out\" /\u003e\n  \u003c/component\u003e\n\u003c/project\u003e\n",
+    "original_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003cproject version=\"4\"\u003e\n  \u003ccomponent name=\"ExternalStorageConfigurationManager\" enabled=\"true\" /\u003e\n  \u003ccomponent name=\"FrameworkDetectionExcludesConfiguration\"\u003e\n    \u003cfile type=\"web\" url=\"file://$PROJECT_DIR$\" /\u003e\n  \u003c/component\u003e\n  \u003ccomponent name=\"MavenProjectsManager\"\u003e\n    \u003coption name=\"originalFiles\"\u003e\n      \u003clist\u003e\n        \u003coption value=\"$PROJECT_DIR$/pom.xml\" /\u003e\n      \u003c/list\u003e\n    \u003c/option\u003e\n  \u003c/component\u003e\n  \u003ccomponent name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\"\u003e\n    \u003coutput url=\"file://$PROJECT_DIR$/out\" /\u003e\n  \u003c/component\u003e\n\u003c/project\u003e\n",
+    "path": ".idea/misc.xml",
+    "model_usage_metrics": {
+        "Duration": 1478734229,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

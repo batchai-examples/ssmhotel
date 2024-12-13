@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.controller.admin;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Checkin;\nimport com.bdqn.entity.Employee;\nimport com.bdqn.service.CheckinService;\nimport com.bdqn.utils.DataGridViewResult;\nimport com.bdqn.utils.SystemConstant;\nimport com.bdqn.vo.CheckinVo;\nimport com.github.pagehelper.PageHelper;\nimport com.github.pagehelper.PageInfo;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport javax.annotation.Resource;\nimport javax.servlet.http.HttpSession;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n@RestController\n@RequestMapping(\"/admin/checkin\")\npublic class CheckinAdminController {\n\n    @Resource\n    private CheckinService checkinService;\n\n    /**\n     * 查询入住列表\n     * @param checkinVo\n     * @return\n     */\n    @RequestMapping(\"/list\")\n    public DataGridViewResult list(CheckinVo checkinVo){\n        //设置分页信息\n        PageHelper.startPage(checkinVo.getPage(),checkinVo.getLimit());\n        //调用查询入住列表方法\n        List\u003cCheckin\u003e checkinList = checkinService.findCheckinList(checkinVo);\n        //创建分页对象\n        PageInfo\u003cCheckin\u003e pageInfo = new PageInfo\u003cCheckin\u003e(checkinList);\n        //返回数据\n        return new DataGridViewResult(pageInfo.getTotal(),pageInfo.getList());\n    }\n\n    /**\n     * 登记入住\n     * @param checkin\n     * @return\n     */\n    @RequestMapping(\"/addCheckin\")\n    public String addCheckin(Checkin checkin, HttpSession session){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //获取当前登录用户\n        Employee employee = (Employee) session.getAttribute(SystemConstant.LOGINUSER);\n        //创建人\n        checkin.setCreatedby(employee.getId());\n        //调用添加入住信息的方法\n        if(checkinService.addCheckin(checkin)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"办理入住成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"办理入住失败\");\n        }\n        return JSON.toJSONString(map);\n    }\n\n}\n",
+    "original_code": "package com.bdqn.controller.admin;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Checkin;\nimport com.bdqn.entity.Employee;\nimport com.bdqn.service.CheckinService;\nimport com.bdqn.utils.DataGridViewResult;\nimport com.bdqn.utils.SystemConstant;\nimport com.bdqn.vo.CheckinVo;\nimport com.github.pagehelper.PageHelper;\nimport com.github.pagehelper.PageInfo;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport javax.annotation.Resource;\nimport javax.servlet.http.HttpSession;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\n\n@RestController\n@RequestMapping(\"/admin/checkin\")\npublic class CheckinAdminController {\n\n    @Resource\n    private CheckinService checkinService;\n\n    /**\n     * 查询入住列表\n     * @param checkinVo\n     * @return\n     */\n    @RequestMapping(\"/list\")\n    public DataGridViewResult list(CheckinVo checkinVo){\n        //设置分页信息\n        PageHelper.startPage(checkinVo.getPage(),checkinVo.getLimit());\n        //调用查询入住列表方法\n        List\u003cCheckin\u003e checkinList = checkinService.findCheckinList(checkinVo);\n        //创建分页对象\n        PageInfo\u003cCheckin\u003e pageInfo = new PageInfo\u003cCheckin\u003e(checkinList);\n        //返回数据\n        return new DataGridViewResult(pageInfo.getTotal(),pageInfo.getList());\n    }\n\n    /**\n     * 登记入住\n     * @param checkin\n     * @return\n     */\n    @RequestMapping(\"/addCheckin\")\n    public String addCheckin(Checkin checkin, HttpSession session){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //获取当前登录用户\n        Employee employee = (Employee) session.getAttribute(SystemConstant.LOGINUSER);\n        //创建人\n        checkin.setCreatedby(employee.getId());\n        //调用添加入住信息的方法\n        if(checkinService.addCheckin(checkin)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"办理入住成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"办理入住失败\");\n        }\n        return JSON.toJSONString(map);\n    }\n\n}\n",
+    "path": "src/main/java/com/bdqn/controller/admin/CheckinAdminController.java",
+    "model_usage_metrics": {
+        "Duration": 1061924146,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.RoomTypeMapper;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.RoomTypeService;\nimport com.bdqn.vo.RoomTypeVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n@Service\n@Transactional\npublic class RoomTypeServiceImpl implements RoomTypeService {\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    /**\n     * 查询房型列表\n     *\n     * @param roomTypeVo\n     * @return\n     */\n    public List\u003cRoomType\u003e findRoomTypeList(RoomTypeVo roomTypeVo) {\n        return roomTypeMapper.findRoomTypeList(roomTypeVo);\n    }\n\n    public int addRoomType(RoomType roomType) {\n        setRoomTypeFields(roomType);\n        return roomTypeMapper.addRoomType(roomType);\n    }\n\n    /**\n     * 更新房型信息\n     *\n     * @param roomType 房型对象\n     * @return 影响的行数\n     */\n    public int updateRoomType(RoomType roomType) {\n        setRoomTypeFields(roomType);\n        return roomTypeMapper.updateRoomType(roomType);\n    }\n\n    private void setRoomTypeFields(RoomType roomType) {\n        // 可用房间数默认是全部的房间数量\n        roomType.setAvailableNum(roomType.getRoomnum());\n        roomType.setLivednum(0); // 已入住房间数量\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.RoomTypeMapper;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.RoomTypeService;\nimport com.bdqn.vo.RoomTypeVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n@Service\n@Transactional\npublic class RoomTypeServiceImpl implements RoomTypeService {\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    /**\n     * 查询房型列表\n     *\n     * @param roomTypeVo\n     * @return\n     */\n    public List\u003cRoomType\u003e findRoomTypeList(RoomTypeVo roomTypeVo) {\n        return roomTypeMapper.findRoomTypeList(roomTypeVo);\n    }\n\n    public int addRoomType(RoomType roomType) {\n        setRoomTypeFields(roomType);\n        return roomTypeMapper.addRoomType(roomType);\n    }\n\n    /**\n     * 更新房型信息\n     *\n     * @param roomType 房型对象\n     * @return 影响的行数\n     */\n    public int updateRoomType(RoomType roomType) {\n        setRoomTypeFields(roomType);\n        return roomTypeMapper.updateRoomType(roomType);\n    }\n\n    private void setRoomTypeFields(RoomType roomType) {\n        // 可用房间数默认是全部的房间数量\n        roomType.setAvailableNum(roomType.getRoomnum());\n        roomType.setLivednum(0); // 已入住房间数量\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/RoomTypeServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1040530129,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

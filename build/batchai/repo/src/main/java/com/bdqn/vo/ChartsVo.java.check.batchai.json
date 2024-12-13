@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.vo;\n\npublic class ChartsVo {\n    private String name;\n    private String type;\n    private String stack;\n    private Object data;\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getType() {\n        return type;\n    }\n\n    public void setType(String type) {\n        this.type = type;\n    }\n\n    public String getStack() {\n        return stack;\n    }\n\n    public void setStack(String stack) {\n        this.stack = stack;\n    }\n\n    public Object getData() {\n        return data;\n    }\n\n    public void setData(Object data) {\n        this.data = data;\n    }\n\n    public ChartsVo(){\n\n    }\n\n    public ChartsVo(String name, String type, String stack, Object data) {\n        this.name = name;\n        this.type = type;\n        this.stack = stack;\n        this.data = data;\n    }\n}\n",
+    "original_code": "package com.bdqn.vo;\n\npublic class ChartsVo {\n    private String name;\n    private String type;\n    private String stack;\n    private Object data;\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getType() {\n        return type;\n    }\n\n    public void setType(String type) {\n        this.type = type;\n    }\n\n    public String getStack() {\n        return stack;\n    }\n\n    public void setStack(String stack) {\n        this.stack = stack;\n    }\n\n    public Object getData() {\n        return data;\n    }\n\n    public void setData(Object data) {\n        this.data = data;\n    }\n\n    public ChartsVo(){\n\n    }\n\n    public ChartsVo(String name, String type, String stack, Object data) {\n        this.name = name;\n        this.type = type;\n        this.stack = stack;\n        this.data = data;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/vo/ChartsVo.java",
+    "model_usage_metrics": {
+        "Duration": 1031907102,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

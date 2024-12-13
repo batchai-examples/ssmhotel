@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.vo.RoomTypeVo;\n\nimport java.util.List;\n\npublic interface RoomTypeService {\n    /**\n     * 查询房型列表\n     * @param roomTypeVo\n     * @return\n     */\n    List\u003cRoomType\u003e findRoomTypeList(RoomTypeVo roomTypeVo);\n\n    /**\n     * 添加房型\n     * @param roomType\n     * @return\n     */\n    int addRoomType(RoomType roomType);\n\n    /**\n     * 修改房型\n     * @param roomType\n     * @return\n     */\n    int updateRoomType(RoomType roomType);\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.vo.RoomTypeVo;\n\nimport java.util.List;\n\npublic interface RoomTypeService {\n    /**\n     * 查询房型列表\n     * @param roomTypeVo\n     * @return\n     */\n    List\u003cRoomType\u003e findRoomTypeList(RoomTypeVo roomTypeVo);\n\n    /**\n     * 添加房型\n     * @param roomType\n     * @return\n     */\n    int addRoomType(RoomType roomType);\n\n    /**\n     * 修改房型\n     * @param roomType\n     * @return\n     */\n    int updateRoomType(RoomType roomType);\n}\n",
+    "path": "src/main/java/com/bdqn/service/RoomTypeService.java",
+    "model_usage_metrics": {
+        "Duration": 1039818163,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Room;\nimport com.bdqn.vo.RoomVo;\n\nimport java.util.List;\n\npublic interface RoomService {\n    /**\n     * 查询房间列表\n     * @param roomVo\n     * @return\n     */\n    List\u003cRoom\u003e findRoomListByPage(RoomVo roomVo);\n    /**\n     * 添加房间\n     * @param room\n     * @return\n     */\n    int addRoom(Room room);\n\n    /**\n     * 修改房间\n     * @param room\n     * @return\n     */\n    int updateRoom(Room room);\n\n    /**\n     * 删除房间\n     * @param id\n     * @return\n     */\n    int deleteById(int id);\n\n    /**\n     * 根据楼层查询房间列表\n     * @return\n     */\n    List\u003cRoom\u003e findRoomListByFloorId();\n\n    /**\n     * 查看房间详情\n     * @param id\n     * @return\n     */\n    Room findById(Integer id);\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Room;\nimport com.bdqn.vo.RoomVo;\n\nimport java.util.List;\n\npublic interface RoomService {\n    /**\n     * 查询房间列表\n     * @param roomVo\n     * @return\n     */\n    List\u003cRoom\u003e findRoomListByPage(RoomVo roomVo);\n    /**\n     * 添加房间\n     * @param room\n     * @return\n     */\n    int addRoom(Room room);\n\n    /**\n     * 修改房间\n     * @param room\n     * @return\n     */\n    int updateRoom(Room room);\n\n    /**\n     * 删除房间\n     * @param id\n     * @return\n     */\n    int deleteById(int id);\n\n    /**\n     * 根据楼层查询房间列表\n     * @return\n     */\n    List\u003cRoom\u003e findRoomListByFloorId();\n\n    /**\n     * 查看房间详情\n     * @param id\n     * @return\n     */\n    Room findById(Integer id);\n}\n",
+    "path": "src/main/java/com/bdqn/service/RoomService.java",
+    "model_usage_metrics": {
+        "Duration": 1038634857,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

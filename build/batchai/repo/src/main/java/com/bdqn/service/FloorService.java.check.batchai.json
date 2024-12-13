@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Floor;\nimport com.bdqn.vo.FloorVo;\n\nimport java.util.List;\n\npublic interface FloorService {\n    /**\n     * 查询楼层列表\n     * @param floorVo\n     * @return\n     */\n    List\u003cFloor\u003e findFloorList(FloorVo floorVo);\n\n    /**\n     * 添加楼层\n     * @param floor\n     * @return\n     */\n    int addFloor(Floor floor);\n\n    /**\n     * 修改楼层\n     * @param floor\n     * @return\n     */\n    int updateFloor(Floor floor);\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Floor;\nimport com.bdqn.vo.FloorVo;\n\nimport java.util.List;\n\npublic interface FloorService {\n    /**\n     * 查询楼层列表\n     * @param floorVo\n     * @return\n     */\n    List\u003cFloor\u003e findFloorList(FloorVo floorVo);\n\n    /**\n     * 添加楼层\n     * @param floor\n     * @return\n     */\n    int addFloor(Floor floor);\n\n    /**\n     * 修改楼层\n     * @param floor\n     * @return\n     */\n    int updateFloor(Floor floor);\n}\n",
+    "path": "src/main/java/com/bdqn/service/FloorService.java",
+    "model_usage_metrics": {
+        "Duration": 1031805205,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.RoomMapper;\nimport com.bdqn.entity.Room;\nimport com.bdqn.service.RoomService;\nimport com.bdqn.vo.RoomVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n@Service\n@Transactional\npublic class RoomServiceImpl implements RoomService {\n\n    @Resource\n    private RoomMapper roomMapper;\n\n    /**\n     * 查询房间列表\n     *\n     * @param roomVo\n     * @return\n     */\n    public List\u003cRoom\u003e findRoomListByPage(RoomVo roomVo) {\n        return roomMapper.findRoomListByPage(roomVo);\n    }\n\n    public int addRoom(Room room) {\n        return roomMapper.addRoom(room);\n    }\n\n    public int updateRoom(Room room) {\n        return roomMapper.updateRoom(room);\n    }\n\n    public int deleteById(int id) {\n        return roomMapper.deleteById(id);\n    }\n\n    public List\u003cRoom\u003e findRoomListByFloorId() {\n        return roomMapper.findRoomListByFloorId();\n    }\n\n    public Room findById(Integer id) {\n        return roomMapper.findById(id);\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.RoomMapper;\nimport com.bdqn.entity.Room;\nimport com.bdqn.service.RoomService;\nimport com.bdqn.vo.RoomVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n@Service\n@Transactional\npublic class RoomServiceImpl implements RoomService {\n\n    @Resource\n    private RoomMapper roomMapper;\n\n    /**\n     * 查询房间列表\n     *\n     * @param roomVo\n     * @return\n     */\n    public List\u003cRoom\u003e findRoomListByPage(RoomVo roomVo) {\n        return roomMapper.findRoomListByPage(roomVo);\n    }\n\n    public int addRoom(Room room) {\n        return roomMapper.addRoom(room);\n    }\n\n    public int updateRoom(Room room) {\n        return roomMapper.updateRoom(room);\n    }\n\n    public int deleteById(int id) {\n        return roomMapper.deleteById(id);\n    }\n\n    public List\u003cRoom\u003e findRoomListByFloorId() {\n        return roomMapper.findRoomListByFloorId();\n    }\n\n    public Room findById(Integer id) {\n        return roomMapper.findById(id);\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/RoomServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1432994289,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

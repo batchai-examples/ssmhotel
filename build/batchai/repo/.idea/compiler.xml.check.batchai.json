@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003cproject version=\"4\"\u003e\n  \u003ccomponent name=\"CompilerConfiguration\"\u003e\n    \u003cannotationProcessing\u003e\n      \u003cprofile name=\"Maven default annotation processors profile\" enabled=\"true\"\u003e\n        \u003csourceOutputDir name=\"target/generated-sources/annotations\" /\u003e\n        \u003csourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" /\u003e\n        \u003coutputRelativeToContentRoot value=\"true\" /\u003e\n        \u003cmodule name=\"ssm_hotel\" /\u003e\n      \u003c/profile\u003e\n    \u003c/annotationProcessing\u003e\n  \u003c/component\u003e\n\u003c/project\u003e\n",
+    "original_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003cproject version=\"4\"\u003e\n  \u003ccomponent name=\"CompilerConfiguration\"\u003e\n    \u003cannotationProcessing\u003e\n      \u003cprofile name=\"Maven default annotation processors profile\" enabled=\"true\"\u003e\n        \u003csourceOutputDir name=\"target/generated-sources/annotations\" /\u003e\n        \u003csourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" /\u003e\n        \u003coutputRelativeToContentRoot value=\"true\" /\u003e\n        \u003cmodule name=\"ssm_hotel\" /\u003e\n      \u003c/profile\u003e\n    \u003c/annotationProcessing\u003e\n  \u003c/component\u003e\n\u003c/project\u003e\n",
+    "path": ".idea/compiler.xml",
+    "model_usage_metrics": {
+        "Duration": 1194059692,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

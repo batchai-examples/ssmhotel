@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.DeptMapper;\nimport com.bdqn.entity.Dept;\nimport com.bdqn.service.DeptService;\nimport com.bdqn.vo.DeptVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\nimport java.util.List;\n\n\n@Service\n@Transactional\npublic class DeptServiceImpl implements DeptService {\n\n    @Resource\n    private DeptMapper deptMapper;\n\n    /**\n     * 查询部门列表\n     *\n     * @param deptVo\n     * @return\n     */\n    public List\u003cDept\u003e findDeptListByPage(DeptVo deptVo) {\n        return deptMapper.findDeptListByPage(deptVo);\n    }\n\n    public int addDept(Dept dept) {\n        //保存创建时间\n        dept.setCreateDate(new Date());\n        return deptMapper.addDept(dept);\n    }\n\n    public int updateDept(Dept dept) {\n        return deptMapper.updateDept(dept);\n    }\n\n    public int deleteById(Integer id) {\n        return deptMapper.deleteById(id);\n    }\n\n    public List\u003cDept\u003e findDeptList() {\n        return deptMapper.findDeptList();\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.DeptMapper;\nimport com.bdqn.entity.Dept;\nimport com.bdqn.service.DeptService;\nimport com.bdqn.vo.DeptVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\nimport java.util.List;\n\n\n@Service\n@Transactional\npublic class DeptServiceImpl implements DeptService {\n\n    @Resource\n    private DeptMapper deptMapper;\n\n    /**\n     * 查询部门列表\n     *\n     * @param deptVo\n     * @return\n     */\n    public List\u003cDept\u003e findDeptListByPage(DeptVo deptVo) {\n        return deptMapper.findDeptListByPage(deptVo);\n    }\n\n    public int addDept(Dept dept) {\n        //保存创建时间\n        dept.setCreateDate(new Date());\n        return deptMapper.addDept(dept);\n    }\n\n    public int updateDept(Dept dept) {\n        return deptMapper.updateDept(dept);\n    }\n\n    public int deleteById(Integer id) {\n        return deptMapper.deleteById(id);\n    }\n\n    public List\u003cDept\u003e findDeptList() {\n        return deptMapper.findDeptList();\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/DeptServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1102989224,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

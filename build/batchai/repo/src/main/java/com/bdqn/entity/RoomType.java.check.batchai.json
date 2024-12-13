@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.entity;\n\npublic class RoomType {\n    private Integer id;\n\n    private String typename;\n\n    private String photo;\n\n    private Double price;\n\n    private Integer livenum;\n\n    private Integer bednum;\n\n    private Integer roomnum;\n\n    private Integer reservednum;\n\n    private Integer avilablenum;\n\n    private Integer livednum;\n\n    private Integer status;\n\n    private String remark;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getTypename() {\n        return typename;\n    }\n\n    public void setTypename(String typename) {\n        this.typename = typename;\n    }\n\n    public String getPhoto() {\n        return photo;\n    }\n\n    public void setPhoto(String photo) {\n        this.photo = photo;\n    }\n\n    public Double getPrice() {\n        return price;\n    }\n\n    public void setPrice(Double price) {\n        this.price = price;\n    }\n\n    public Integer getLivenum() {\n        return livenum;\n    }\n\n    public void setLivenum(Integer livenum) {\n        this.livenum = livenum;\n    }\n\n    public Integer getBednum() {\n        return bednum;\n    }\n\n    public void setBednum(Integer bednum) {\n        this.bednum = bednum;\n    }\n\n    public Integer getRoomnum() {\n        return roomnum;\n    }\n\n    public void setRoomnum(Integer roomnum) {\n        this.roomnum = roomnum;\n    }\n\n    public Integer getReservednum() {\n        return reservednum;\n    }\n\n    public void setReservednum(Integer reservednum) {\n        this.reservednum = reservednum;\n    }\n\n    public Integer getAvilablenum() {\n        return avilablenum;\n    }\n\n    public void setAvilablenum(Integer avilablenum) {\n        this.avilablenum = avilablenum;\n    }\n\n    public Integer getLivednum() {\n        return livednum;\n    }\n\n    public void setLivednum(Integer livednum) {\n        this.livednum = livednum;\n    }\n\n    public Integer getStatus() {\n        return status;\n    }\n\n    public void setStatus(Integer status) {\n        this.status = status;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "original_code": "package com.bdqn.entity;\n\npublic class RoomType {\n    private Integer id;\n\n    private String typename;\n\n    private String photo;\n\n    private Double price;\n\n    private Integer livenum;\n\n    private Integer bednum;\n\n    private Integer roomnum;\n\n    private Integer reservednum;\n\n    private Integer avilablenum;\n\n    private Integer livednum;\n\n    private Integer status;\n\n    private String remark;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getTypename() {\n        return typename;\n    }\n\n    public void setTypename(String typename) {\n        this.typename = typename;\n    }\n\n    public String getPhoto() {\n        return photo;\n    }\n\n    public void setPhoto(String photo) {\n        this.photo = photo;\n    }\n\n    public Double getPrice() {\n        return price;\n    }\n\n    public void setPrice(Double price) {\n        this.price = price;\n    }\n\n    public Integer getLivenum() {\n        return livenum;\n    }\n\n    public void setLivenum(Integer livenum) {\n        this.livenum = livenum;\n    }\n\n    public Integer getBednum() {\n        return bednum;\n    }\n\n    public void setBednum(Integer bednum) {\n        this.bednum = bednum;\n    }\n\n    public Integer getRoomnum() {\n        return roomnum;\n    }\n\n    public void setRoomnum(Integer roomnum) {\n        this.roomnum = roomnum;\n    }\n\n    public Integer getReservednum() {\n        return reservednum;\n    }\n\n    public void setReservednum(Integer reservednum) {\n        this.reservednum = reservednum;\n    }\n\n    public Integer getAvilablenum() {\n        return avilablenum;\n    }\n\n    public void setAvilablenum(Integer avilablenum) {\n        this.avilablenum = avilablenum;\n    }\n\n    public Integer getLivednum() {\n        return livednum;\n    }\n\n    public void setLivednum(Integer livednum) {\n        this.livednum = livednum;\n    }\n\n    public Integer getStatus() {\n        return status;\n    }\n\n    public void setStatus(Integer status) {\n        this.status = status;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/entity/RoomType.java",
+    "model_usage_metrics": {
+        "Duration": 1081207828,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Checkin;\nimport com.bdqn.vo.CheckinVo;\n\nimport java.util.List;\n\npublic interface CheckinService {\n    /**\n     * 查询入住列表\n     * @param checkinVo\n     * @return\n     */\n    List\u003cCheckin\u003e findCheckinList(CheckinVo checkinVo);\n\n    /**\n     * 添加入住信息\n     * @param checkin\n     * @return\n     */\n    int addCheckin(Checkin checkin);\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Checkin;\nimport com.bdqn.vo.CheckinVo;\n\nimport java.util.List;\n\npublic interface CheckinService {\n    /**\n     * 查询入住列表\n     * @param checkinVo\n     * @return\n     */\n    List\u003cCheckin\u003e findCheckinList(CheckinVo checkinVo);\n\n    /**\n     * 添加入住信息\n     * @param checkin\n     * @return\n     */\n    int addCheckin(Checkin checkin);\n}\n",
+    "path": "src/main/java/com/bdqn/service/CheckinService.java",
+    "model_usage_metrics": {
+        "Duration": 1032019545,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

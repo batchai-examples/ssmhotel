@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003c!DOCTYPE mapper\n        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\"\u003e\n\u003cmapper namespace=\"com.bdqn.dao.FloorMapper\"\u003e\n\n    \u003cselect id=\"findFloorList\" resultType=\"com.bdqn.entity.Floor\"\u003e\n        select * from t_floor\n        \u003cwhere\u003e\n            \u003cif test=\"name!=null and name!=''\"\u003e\n                and name like concat('%',#{name},'%')\n            \u003c/if\u003e\n        \u003c/where\u003e\n    \u003c/select\u003e\n\n    \u003cinsert id=\"addFloor\"\u003e\n        insert into t_floor(name,remark) values (#{name},#{remark})\n    \u003c/insert\u003e\n\n\n    \u003cupdate id=\"updateFloor\"\u003e\n        update t_floor\n        \u003cset\u003e\n            \u003cif test=\"name!=null and name!=''\"\u003e\n                name = #{name},\n            \u003c/if\u003e\n            \u003cif test=\"remark!=null and remark!=''\"\u003e\n                remark = #{remark},\n            \u003c/if\u003e\n        \u003c/set\u003e\n        where id = #{id}\n    \u003c/update\u003e\n\n\u003c/mapper\u003e\n",
+    "original_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003c!DOCTYPE mapper\n        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\"\u003e\n\u003cmapper namespace=\"com.bdqn.dao.FloorMapper\"\u003e\n\n    \u003cselect id=\"findFloorList\" resultType=\"com.bdqn.entity.Floor\"\u003e\n        select * from t_floor\n        \u003cwhere\u003e\n            \u003cif test=\"name!=null and name!=''\"\u003e\n                and name like concat('%',#{name},'%')\n            \u003c/if\u003e\n        \u003c/where\u003e\n    \u003c/select\u003e\n\n    \u003cinsert id=\"addFloor\"\u003e\n        insert into t_floor(name,remark) values (#{name},#{remark})\n    \u003c/insert\u003e\n\n\n    \u003cupdate id=\"updateFloor\"\u003e\n        update t_floor\n        \u003cset\u003e\n            \u003cif test=\"name!=null and name!=''\"\u003e\n                name = #{name},\n            \u003c/if\u003e\n            \u003cif test=\"remark!=null and remark!=''\"\u003e\n                remark = #{remark},\n            \u003c/if\u003e\n        \u003c/set\u003e\n        where id = #{id}\n    \u003c/update\u003e\n\n\u003c/mapper\u003e\n",
+    "path": "src/main/resources/mapper/FloorMapper.xml",
+    "model_usage_metrics": {
+        "Duration": 1040409469,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

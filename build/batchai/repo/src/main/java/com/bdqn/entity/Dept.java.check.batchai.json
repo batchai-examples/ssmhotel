@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.entity;\n\nimport java.util.Date;\n\npublic class Dept {\n\n    private Integer id;\n    private String deptName;\n    private String address;\n    private Date createDate;\n    private String remark;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getDeptName() {\n        return deptName;\n    }\n\n    public void setDeptName(String deptName) {\n        this.deptName = deptName;\n    }\n\n    public String getAddress() {\n        return address;\n    }\n\n    public void setAddress(String address) {\n        this.address = address;\n    }\n\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "original_code": "package com.bdqn.entity;\n\nimport java.util.Date;\n\npublic class Dept {\n\n    private Integer id;\n    private String deptName;\n    private String address;\n    private Date createDate;\n    private String remark;\n\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    public String getDeptName() {\n        return deptName;\n    }\n\n    public void setDeptName(String deptName) {\n        this.deptName = deptName;\n    }\n\n    public String getAddress() {\n        return address;\n    }\n\n    public void setAddress(String address) {\n        this.address = address;\n    }\n\n    public Date getCreateDate() {\n        return createDate;\n    }\n\n    public void setCreateDate(Date createDate) {\n        this.createDate = createDate;\n    }\n\n    public String getRemark() {\n        return remark;\n    }\n\n    public void setRemark(String remark) {\n        this.remark = remark;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/entity/Dept.java",
+    "model_usage_metrics": {
+        "Duration": 1322265503,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

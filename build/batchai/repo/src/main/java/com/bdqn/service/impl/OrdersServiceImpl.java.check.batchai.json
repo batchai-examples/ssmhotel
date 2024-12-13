@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.OrdersMapper;\nimport com.bdqn.dao.RoomMapper;\nimport com.bdqn.dao.RoomTypeMapper;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.entity.Room;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.OrdersService;\nimport com.bdqn.utils.UUIDUtils;\nimport com.bdqn.vo.OrdersVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\nimport java.util.List;\n\n@Service\n@Transactional\npublic class OrdersServiceImpl implements OrdersService {\n\n    @Resource\n    private OrdersMapper ordersMapper;\n\n    @Resource\n    private RoomMapper roomMapper;\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    /**\n     * 添加订单\n     *\n     * @param orders\n     * @return\n     */\n    @Transactional(rollbackFor = RuntimeException.class)\n    public int addOrders(Orders orders) {\n        orders.setStatus(1);//1-待确认\n        orders.setOrdersno(UUIDUtils.randomUUID());\n        orders.setReservedate(new Date());//预订时间为当前系统时间\n        int count = ordersMapper.addOrders(orders);\n        //判断订单是否添加成功，添加成功操作房间及房型\n        if(count\u003e0){\n            //修改房间状态为已预订(状态码为1)\n            //查询房间信息\n            Room room = roomMapper.findById(orders.getRoomid());\n            room.setStatus(1);//修改房间状态为已预订(编号1)\n            //调用修改房间信息的方法\n            roomMapper.updateRoom(room);\n\n            //修改房型(可用房间数-1，已预订数量+1)\n            RoomType roomType = roomTypeMapper.findById(orders.getRoomtypeid());\n            //修改可用房间数量\n            roomType.setAvilablenum(roomType.getAvilablenum()-1);\n            //修改已预订数量\n            roomType.setReservednum(roomType.getReservednum()+1);\n            //调用修改房型的方法\n            roomTypeMapper.updateRoomType(roomType);\n        }\n\n        return count;\n    }\n\n    public List\u003cOrders\u003e findOrdersList(OrdersVo ordersVo) {\n        return ordersMapper.findOrdersList(ordersVo);\n    }\n\n    public int updateOrders(Orders orders) {\n        return ordersMapper.updateOrders(orders);\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.OrdersMapper;\nimport com.bdqn.dao.RoomMapper;\nimport com.bdqn.dao.RoomTypeMapper;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.entity.Room;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.OrdersService;\nimport com.bdqn.utils.UUIDUtils;\nimport com.bdqn.vo.OrdersVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\nimport java.util.List;\n\n@Service\n@Transactional\npublic class OrdersServiceImpl implements OrdersService {\n\n    @Resource\n    private OrdersMapper ordersMapper;\n\n    @Resource\n    private RoomMapper roomMapper;\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    /**\n     * 添加订单\n     *\n     * @param orders\n     * @return\n     */\n    @Transactional(rollbackFor = RuntimeException.class)\n    public int addOrders(Orders orders) {\n        orders.setStatus(1);//1-待确认\n        orders.setOrdersno(UUIDUtils.randomUUID());\n        orders.setReservedate(new Date());//预订时间为当前系统时间\n        int count = ordersMapper.addOrders(orders);\n        //判断订单是否添加成功，添加成功操作房间及房型\n        if(count\u003e0){\n            //修改房间状态为已预订(状态码为1)\n            //查询房间信息\n            Room room = roomMapper.findById(orders.getRoomid());\n            room.setStatus(1);//修改房间状态为已预订(编号1)\n            //调用修改房间信息的方法\n            roomMapper.updateRoom(room);\n\n            //修改房型(可用房间数-1，已预订数量+1)\n            RoomType roomType = roomTypeMapper.findById(orders.getRoomtypeid());\n            //修改可用房间数量\n            roomType.setAvilablenum(roomType.getAvilablenum()-1);\n            //修改已预订数量\n            roomType.setReservednum(roomType.getReservednum()+1);\n            //调用修改房型的方法\n            roomTypeMapper.updateRoomType(roomType);\n        }\n\n        return count;\n    }\n\n    public List\u003cOrders\u003e findOrdersList(OrdersVo ordersVo) {\n        return ordersMapper.findOrdersList(ordersVo);\n    }\n\n    public int updateOrders(Orders orders) {\n        return ordersMapper.updateOrders(orders);\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/OrdersServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1076269644,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

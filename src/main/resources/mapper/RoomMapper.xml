@@ -9,16 +9,16 @@
         inner join t_room_type t2 on t2.`id` = t1.`roomTypeId`
         inner join t_floor t3 on t3.`id` = t1.`floorId`
         <where>
-            <if test="roomnum!=null and roomnum!=''">
-                and t1.roomnum like concat('%',#{roomnum},'%')
+            <if test="roomnum != null and roomnum != ''">
+                and t1.roomnum like concat('%', #{roomnum}, '%')
             </if>
-            <if test="roomtypeid!=null">
+            <if test="roomtypeid != null">
                 and t1.roomtypeid = #{roomtypeid}
             </if>
-            <if test="floorid!=null">
+            <if test="floorid != null">
                 and t1.floorid = #{floorid}
             </if>
-            <if test="status!=null">
+            <if test="status != null">
                 and t1.status = #{status}
             </if>
         </where>
@@ -26,35 +26,35 @@
     </select>
 
     <insert id="addRoom">
-        insert into t_room (photo,roomnum,roomtypeid,floorid,status,roomdesc,roomrequirement,remark)
-        values(#{photo},#{roomnum},#{roomtypeid},#{floorid},#{status},#{roomdesc},#{roomrequirement},#{remark})
+        insert into t_room (photo, roomnum, roomtypeid, floorid, status, roomdesc, roomrequirement, remark)
+        values(#{photo}, #{roomnum}, #{roomtypeid}, #{floorid}, #{status}, #{roomdesc}, #{roomrequirement}, #{remark})
     </insert>
 
     <update id="updateRoom">
         update t_room
         <set>
-            <if test="photo!=null and photo!=''">
+            <if test="photo != null and photo != ''">
                 photo = #{photo},
             </if>
-            <if test="roomnum!=null and roomnum!=''">
+            <if test="roomnum != null and roomnum != ''">
                 roomNum = #{roomnum},
             </if>
-            <if test="roomtypeid!=null">
+            <if test="roomtypeid != null">
                 roomtypeid = #{roomtypeid},
             </if>
-            <if test="floorid!=null">
+            <if test="floorid != null">
                 floorid = #{floorid},
             </if>
-            <if test="status!=null">
+            <if test="status != null">
                 status = #{status},
             </if>
-            <if test="roomrequirement!=null and roomrequirement!=''">
+            <if test="roomrequirement != null and roomrequirement != ''">
                 roomrequirement = #{roomrequirement},
             </if>
-            <if test="roomdesc!=null and roomdesc!=''">
+            <if test="roomdesc != null and roomdesc != ''">
                 roomdesc = #{roomdesc},
             </if>
-            <if test="remark!=null and remark!=''">
+            <if test="remark != null and remark != ''">
                 remark = #{remark},
             </if>
         </set>

@@ -80,16 +80,14 @@ public class OrdersAdminController {
             orders.setStatus(2);//已确认
             orders.setId(Integer.valueOf(idsStr[i]));
             //调用修改订单的方法
-            count = ordersService.updateOrders(orders);
-            //判断受影响行数是否大于0
-            if(count>0){
-                map.put(SystemConstant.SUCCESS,true);
-                map.put(SystemConstant.MESSAGE,"订单确认成功");
-            }
+            count += ordersService.updateOrders(orders);
         }
 
-        //判断受影响行数是否小于0
-        if(count<=0){
+        //判断受影响行数是否大于0
+        if(count>0){
+            map.put(SystemConstant.SUCCESS,true);
+            map.put(SystemConstant.MESSAGE,"订单确认成功");
+        }else{
             map.put(SystemConstant.SUCCESS,false);
             map.put(SystemConstant.MESSAGE,"订单确认失败");
         }

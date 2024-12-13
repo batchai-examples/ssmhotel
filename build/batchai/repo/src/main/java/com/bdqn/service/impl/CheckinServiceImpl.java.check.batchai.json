@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.CheckinMapper;\nimport com.bdqn.dao.OrdersMapper;\nimport com.bdqn.dao.RoomTypeMapper;\nimport com.bdqn.entity.Checkin;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.CheckinService;\nimport com.bdqn.vo.CheckinVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\nimport java.util.List;\n\n@Transactional\n@Service\npublic class CheckinServiceImpl implements CheckinService {\n\n    @Resource\n    private CheckinMapper checkinMapper;\n\n    @Resource\n    private OrdersMapper ordersMapper;\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    /**\n     * 查询入住列表\n     *\n     * @param checkinVo\n     * @return\n     */\n    public List\u003cCheckin\u003e findCheckinList(CheckinVo checkinVo) {\n        return checkinMapper.findCheckinList(checkinVo);\n    }\n\n\n    @Transactional(rollbackFor = RuntimeException.class)\n    public int addCheckin(Checkin checkin) {\n        //入住状态\n        checkin.setStatus(1);//1-已入住\n        checkin.setCreatedate(new Date());//创建时间\n        //1.添加入住信息\n        int count = checkinMapper.addCheckin(checkin);\n        if(count\u003e0){\n            //2.修改预订订单的状态(t_orders表中的status列，值修改成3(已入住))\n            Orders orders = new Orders();\n            orders.setId(checkin.getOrdersid());//预订订单ID主键\n            orders.setStatus(3);//已入住\n            //调用修改订单方法\n            ordersMapper.updateOrders(orders);\n\n            //3.修改房型表中的已入住数量(t_room_type表中的livednum列，值+1)\n            //3.1：查询原有的房型信息\n            RoomType roomType = roomTypeMapper.findById(checkin.getRoomtypeid());\n            roomType.setLivednum(roomType.getLivednum()+1);\n            //3.2：调用修改房型的方法\n            roomTypeMapper.updateRoomType(roomType);\n        }\n\n        return count;\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.CheckinMapper;\nimport com.bdqn.dao.OrdersMapper;\nimport com.bdqn.dao.RoomTypeMapper;\nimport com.bdqn.entity.Checkin;\nimport com.bdqn.entity.Orders;\nimport com.bdqn.entity.RoomType;\nimport com.bdqn.service.CheckinService;\nimport com.bdqn.vo.CheckinVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\nimport java.util.List;\n\n@Transactional\n@Service\npublic class CheckinServiceImpl implements CheckinService {\n\n    @Resource\n    private CheckinMapper checkinMapper;\n\n    @Resource\n    private OrdersMapper ordersMapper;\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    /**\n     * 查询入住列表\n     *\n     * @param checkinVo\n     * @return\n     */\n    public List\u003cCheckin\u003e findCheckinList(CheckinVo checkinVo) {\n        return checkinMapper.findCheckinList(checkinVo);\n    }\n\n\n    @Transactional(rollbackFor = RuntimeException.class)\n    public int addCheckin(Checkin checkin) {\n        //入住状态\n        checkin.setStatus(1);//1-已入住\n        checkin.setCreatedate(new Date());//创建时间\n        //1.添加入住信息\n        int count = checkinMapper.addCheckin(checkin);\n        if(count\u003e0){\n            //2.修改预订订单的状态(t_orders表中的status列，值修改成3(已入住))\n            Orders orders = new Orders();\n            orders.setId(checkin.getOrdersid());//预订订单ID主键\n            orders.setStatus(3);//已入住\n            //调用修改订单方法\n            ordersMapper.updateOrders(orders);\n\n            //3.修改房型表中的已入住数量(t_room_type表中的livednum列，值+1)\n            //3.1：查询原有的房型信息\n            RoomType roomType = roomTypeMapper.findById(checkin.getRoomtypeid());\n            roomType.setLivednum(roomType.getLivednum()+1);\n            //3.2：调用修改房型的方法\n            roomTypeMapper.updateRoomType(roomType);\n        }\n\n        return count;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/CheckinServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1059087972,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

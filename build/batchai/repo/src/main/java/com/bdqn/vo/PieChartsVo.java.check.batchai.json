@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.vo;\n\npublic class PieChartsVo {\n    private String name;//图形列表项的名称\n    private String value;//对应的数据\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getValue() {\n        return value;\n    }\n\n    public void setValue(String value) {\n        this.value = value;\n    }\n}\n",
+    "original_code": "package com.bdqn.vo;\n\npublic class PieChartsVo {\n    private String name;//图形列表项的名称\n    private String value;//对应的数据\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public String getValue() {\n        return value;\n    }\n\n    public void setValue(String value) {\n        this.value = value;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/vo/PieChartsVo.java",
+    "model_usage_metrics": {
+        "Duration": 1046700372,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

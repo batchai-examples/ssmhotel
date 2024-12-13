@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\" ?\u003e\n\u003c!DOCTYPE configuration\n        PUBLIC \"-//mybatis.org//DTD Config 3.0//EN\"\n        \"http://mybatis.org/dtd/mybatis-3-config.dtd\"\u003e\n\u003cconfiguration\u003e\n\n\n    \u003csettings\u003e\n        \u003c!-- 显示日志信息 --\u003e\n        \u003csetting name=\"logImpl\" value=\"LOG4J\"/\u003e\n    \u003c/settings\u003e\n\n    \u003ctypeAliases\u003e\n        \u003c!-- 设置别名 --\u003e\n        \u003cpackage name=\"com.bdqn.entity\"/\u003e\n    \u003c/typeAliases\u003e\n\n    \u003c!-- 引入 pageHelper插件 --\u003e\n    \u003c!--注意这里要写成PageInterceptor, 5.0之前的版本都是写PageHelper, 5.0之后要换成PageInterceptor--\u003e\n\n    \u003cplugins\u003e\n        \u003cplugin interceptor=\"com.github.pagehelper.PageInterceptor\"\u003e\n            \u003c!--reasonable：分页合理化参数，默认值为false。\n                当该参数设置为 true 时，pageNum\u003c=0 时会查询第一页，\n                pageNum\u003epages（超过总数时），会查询最后一页。\n                默认false 时，直接根据参数进行查询。--\u003e\n            \u003cproperty name=\"reasonable\" value=\"true\"/\u003e\n        \u003c/plugin\u003e\n    \u003c/plugins\u003e\n    \n\u003c/configuration\u003e\n",
+    "original_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\" ?\u003e\n\u003c!DOCTYPE configuration\n        PUBLIC \"-//mybatis.org//DTD Config 3.0//EN\"\n        \"http://mybatis.org/dtd/mybatis-3-config.dtd\"\u003e\n\u003cconfiguration\u003e\n\n\n    \u003csettings\u003e\n        \u003c!-- 显示日志信息 --\u003e\n        \u003csetting name=\"logImpl\" value=\"LOG4J\"/\u003e\n    \u003c/settings\u003e\n\n    \u003ctypeAliases\u003e\n        \u003c!-- 设置别名 --\u003e\n        \u003cpackage name=\"com.bdqn.entity\"/\u003e\n    \u003c/typeAliases\u003e\n\n    \u003c!-- 引入 pageHelper插件 --\u003e\n    \u003c!--注意这里要写成PageInterceptor, 5.0之前的版本都是写PageHelper, 5.0之后要换成PageInterceptor--\u003e\n\n    \u003cplugins\u003e\n        \u003cplugin interceptor=\"com.github.pagehelper.PageInterceptor\"\u003e\n            \u003c!--reasonable：分页合理化参数，默认值为false。\n                当该参数设置为 true 时，pageNum\u003c=0 时会查询第一页，\n                pageNum\u003epages（超过总数时），会查询最后一页。\n                默认false 时，直接根据参数进行查询。--\u003e\n            \u003cproperty name=\"reasonable\" value=\"true\"/\u003e\n        \u003c/plugin\u003e\n    \u003c/plugins\u003e\n    \n\u003c/configuration\u003e\n",
+    "path": "target/ssm_hotel-1.0-SNAPSHOT/WEB-INF/classes/mybatis-config.xml",
+    "model_usage_metrics": {
+        "Duration": 8170403224,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

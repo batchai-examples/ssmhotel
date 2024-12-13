@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Dept;\nimport com.bdqn.vo.DeptVo;\n\nimport java.util.List;\n\npublic interface DeptService {\n    /**\n     * 查询部门列表\n     * @param deptVo\n     * @return\n     */\n    List\u003cDept\u003e findDeptListByPage(DeptVo deptVo);\n\n    /**\n     * 添加部门\n     * @param dept\n     * @return\n     */\n    int addDept(Dept dept);\n\n    /**\n     * 修改部门\n     * @param dept\n     * @return\n     */\n    int updateDept(Dept dept);\n\n    /**\n     * 删除部门\n     * @param id\n     * @return\n     */\n    int deleteById(Integer id);\n\n    /**\n     * 查询所有部门\n     * @return\n     */\n    List\u003cDept\u003e findDeptList();\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Dept;\nimport com.bdqn.vo.DeptVo;\n\nimport java.util.List;\n\npublic interface DeptService {\n    /**\n     * 查询部门列表\n     * @param deptVo\n     * @return\n     */\n    List\u003cDept\u003e findDeptListByPage(DeptVo deptVo);\n\n    /**\n     * 添加部门\n     * @param dept\n     * @return\n     */\n    int addDept(Dept dept);\n\n    /**\n     * 修改部门\n     * @param dept\n     * @return\n     */\n    int updateDept(Dept dept);\n\n    /**\n     * 删除部门\n     * @param id\n     * @return\n     */\n    int deleteById(Integer id);\n\n    /**\n     * 查询所有部门\n     * @return\n     */\n    List\u003cDept\u003e findDeptList();\n}\n",
+    "path": "src/main/java/com/bdqn/service/DeptService.java",
+    "model_usage_metrics": {
+        "Duration": 1027651747,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

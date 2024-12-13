@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.interceptor;\n\nimport com.bdqn.utils.SystemConstant;\nimport org.springframework.web.servlet.handler.HandlerInterceptorAdapter;\n\nimport javax.servlet.http.HttpServletRequest;\nimport javax.servlet.http.HttpServletResponse;\n\npublic class LoginInterceptor extends HandlerInterceptorAdapter {\n\n    @Override\n    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {\n        //判断session是否为空\n        if(request.getSession().getAttribute(SystemConstant.LOGINUSER)==null){\n            //如果没有登录，则去到登录页面\n            response.sendRedirect(request.getContextPath()+\"/admin/login.html\");\n            return false;//验证失败，进行拦截\n        }\n        //验证通过\n        return true;\n    }\n}\n",
+    "original_code": "package com.bdqn.interceptor;\n\nimport com.bdqn.utils.SystemConstant;\nimport org.springframework.web.servlet.handler.HandlerInterceptorAdapter;\n\nimport javax.servlet.http.HttpServletRequest;\nimport javax.servlet.http.HttpServletResponse;\n\npublic class LoginInterceptor extends HandlerInterceptorAdapter {\n\n    @Override\n    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {\n        //判断session是否为空\n        if(request.getSession().getAttribute(SystemConstant.LOGINUSER)==null){\n            //如果没有登录，则去到登录页面\n            response.sendRedirect(request.getContextPath()+\"/admin/login.html\");\n            return false;//验证失败，进行拦截\n        }\n        //验证通过\n        return true;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/interceptor/LoginInterceptor.java",
+    "model_usage_metrics": {
+        "Duration": 1465191498,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

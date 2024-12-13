@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.FloorMapper;\nimport com.bdqn.entity.Floor;\nimport com.bdqn.service.FloorService;\nimport com.bdqn.vo.FloorVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n\n@Service\n@Transactional\npublic class FloorServiceImpl implements FloorService {\n\n    @Resource\n    private FloorMapper floorMapper;\n\n    /**\n     * 查询楼层列表\n     *\n     * @param floorVo\n     * @return\n     */\n    public List\u003cFloor\u003e findFloorList(FloorVo floorVo) {\n        return floorMapper.findFloorList(floorVo);\n    }\n\n    public int addFloor(Floor floor) {\n        return floorMapper.addFloor(floor);\n    }\n\n    public int updateFloor(Floor floor) {\n        return floorMapper.updateFloor(floor);\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.FloorMapper;\nimport com.bdqn.entity.Floor;\nimport com.bdqn.service.FloorService;\nimport com.bdqn.vo.FloorVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n\n@Service\n@Transactional\npublic class FloorServiceImpl implements FloorService {\n\n    @Resource\n    private FloorMapper floorMapper;\n\n    /**\n     * 查询楼层列表\n     *\n     * @param floorVo\n     * @return\n     */\n    public List\u003cFloor\u003e findFloorList(FloorVo floorVo) {\n        return floorMapper.findFloorList(floorVo);\n    }\n\n    public int addFloor(Floor floor) {\n        return floorMapper.addFloor(floor);\n    }\n\n    public int updateFloor(Floor floor) {\n        return floorMapper.updateFloor(floor);\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/FloorServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1043316220,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

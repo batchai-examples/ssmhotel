@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003c!DOCTYPE mapper\n        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\"\u003e\n\u003cmapper namespace=\"com.bdqn.dao.UserMapper\"\u003e\n\n    \u003cinsert id=\"addUser\"\u003e\n        insert into t_user(loginName,password,realName,idCard,phone,email,status,createDate,salt)\n        values(#{loginName},#{password},#{realName},#{idCard},#{phone},#{email},#{status},#{createDate},#{salt})\n    \u003c/insert\u003e\n\n    \u003cselect id=\"findUserByName\" resultType=\"com.bdqn.entity.User\"\u003e\n        select * from t_user where loginName = #{loginName}\n    \u003c/select\u003e\n\n\u003c/mapper\u003e\n",
+    "original_code": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\u003c!DOCTYPE mapper\n        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\"\u003e\n\u003cmapper namespace=\"com.bdqn.dao.UserMapper\"\u003e\n\n    \u003cinsert id=\"addUser\"\u003e\n        insert into t_user(loginName,password,realName,idCard,phone,email,status,createDate,salt)\n        values(#{loginName},#{password},#{realName},#{idCard},#{phone},#{email},#{status},#{createDate},#{salt})\n    \u003c/insert\u003e\n\n    \u003cselect id=\"findUserByName\" resultType=\"com.bdqn.entity.User\"\u003e\n        select * from t_user where loginName = #{loginName}\n    \u003c/select\u003e\n\n\u003c/mapper\u003e\n",
+    "path": "target/classes/mapper/UserMapper.xml",
+    "model_usage_metrics": {
+        "Duration": 1321555259,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

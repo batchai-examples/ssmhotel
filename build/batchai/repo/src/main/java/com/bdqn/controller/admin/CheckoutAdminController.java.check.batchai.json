@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.controller.admin;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Checkout;\nimport com.bdqn.entity.Employee;\nimport com.bdqn.service.CheckoutService;\nimport com.bdqn.utils.SystemConstant;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport javax.annotation.Resource;\nimport javax.servlet.http.HttpSession;\nimport java.util.HashMap;\nimport java.util.Map;\n\n@RestController\n@RequestMapping(\"/admin/checkout\")\npublic class CheckoutAdminController {\n    \n    @Resource\n    private CheckoutService checkoutService;\n\n    /**\n     * 办理退房\n     * @param checkout\n     * @return\n     */\n    @RequestMapping(\"/addCheckout\")\n    public String addCheckin(Checkout checkout, HttpSession session){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //获取当前登录用户\n        Employee employee = (Employee) session.getAttribute(SystemConstant.LOGINUSER);\n        //创建人\n        checkout.setCreatedBy(employee.getId());\n        //调用添加入住信息的方法\n        if(checkoutService.addCheckout(checkout)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"退房成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"退房失败\");\n        }\n        return JSON.toJSONString(map);\n    }\n}\n",
+    "original_code": "package com.bdqn.controller.admin;\n\nimport com.alibaba.fastjson.JSON;\nimport com.bdqn.entity.Checkout;\nimport com.bdqn.entity.Employee;\nimport com.bdqn.service.CheckoutService;\nimport com.bdqn.utils.SystemConstant;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.RestController;\n\nimport javax.annotation.Resource;\nimport javax.servlet.http.HttpSession;\nimport java.util.HashMap;\nimport java.util.Map;\n\n@RestController\n@RequestMapping(\"/admin/checkout\")\npublic class CheckoutAdminController {\n    \n    @Resource\n    private CheckoutService checkoutService;\n\n    /**\n     * 办理退房\n     * @param checkout\n     * @return\n     */\n    @RequestMapping(\"/addCheckout\")\n    public String addCheckin(Checkout checkout, HttpSession session){\n        Map\u003cString,Object\u003e map = new HashMap\u003cString,Object\u003e();\n        //获取当前登录用户\n        Employee employee = (Employee) session.getAttribute(SystemConstant.LOGINUSER);\n        //创建人\n        checkout.setCreatedBy(employee.getId());\n        //调用添加入住信息的方法\n        if(checkoutService.addCheckout(checkout)\u003e0){\n            map.put(SystemConstant.SUCCESS,true);\n            map.put(SystemConstant.MESSAGE,\"退房成功\");\n        }else{\n            map.put(SystemConstant.SUCCESS,false);\n            map.put(SystemConstant.MESSAGE,\"退房失败\");\n        }\n        return JSON.toJSONString(map);\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/controller/admin/CheckoutAdminController.java",
+    "model_usage_metrics": {
+        "Duration": 1086515510,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

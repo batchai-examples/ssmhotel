@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "{\n    \"code\": 0,\n    \"msg\": \"\",\n    \"count\": 16,\n    \"data\": [\n        { \"id\":\"001\", \"username\":\"张玉林\", \"sex\":\"女\" },\n        { \"id\":\"002\", \"username\":\"刘晓军\", \"sex\":\"男\" },\n        { \"id\":\"003\", \"username\":\"张恒\", \"sex\":\"男\" },\n        { \"id\":\"004\", \"username\":\"朱一\", \"sex\":\"男\" },\n        { \"id\":\"005\", \"username\":\"刘佳能\", \"sex\":\"女\" },\n        { \"id\":\"006\", \"username\":\"晓梅\", \"sex\":\"女\" },\n        { \"id\":\"007\", \"username\":\"马冬梅\", \"sex\":\"女\" },\n        { \"id\":\"008\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"009\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"010\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"011\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"012\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"013\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"014\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"015\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"016\", \"username\":\"刘晓庆\", \"sex\":\"女\" }\n    ]\n}\n",
+    "original_code": "{\n    \"code\": 0,\n    \"msg\": \"\",\n    \"count\": 16,\n    \"data\": [\n        { \"id\":\"001\", \"username\":\"张玉林\", \"sex\":\"女\" },\n        { \"id\":\"002\", \"username\":\"刘晓军\", \"sex\":\"男\" },\n        { \"id\":\"003\", \"username\":\"张恒\", \"sex\":\"男\" },\n        { \"id\":\"004\", \"username\":\"朱一\", \"sex\":\"男\" },\n        { \"id\":\"005\", \"username\":\"刘佳能\", \"sex\":\"女\" },\n        { \"id\":\"006\", \"username\":\"晓梅\", \"sex\":\"女\" },\n        { \"id\":\"007\", \"username\":\"马冬梅\", \"sex\":\"女\" },\n        { \"id\":\"008\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"009\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"010\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"011\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"012\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"013\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"014\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"015\", \"username\":\"刘晓庆\", \"sex\":\"女\" },\n        { \"id\":\"016\", \"username\":\"刘晓庆\", \"sex\":\"女\" }\n    ]\n}\n",
+    "path": "target/ssm_hotel-1.0-SNAPSHOT/statics/layui/api/tableSelect.json",
+    "model_usage_metrics": {
+        "Duration": 1046670868,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

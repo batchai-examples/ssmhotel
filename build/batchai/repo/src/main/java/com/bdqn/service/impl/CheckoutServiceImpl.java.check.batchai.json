@@ -1,0 +1,75 @@
+{
+    "has_issue": true,
+    "overall_severity": "major",
+    "issues": [
+        {
+            "short_description": "Potential SQL Injection",
+            "detailed_explaination": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities.",
+            "suggestion": "Use parameterized queries or prepared statements to prevent SQL injection.",
+            "issue_line_begin": 16,
+            "issue_line_end": 20,
+            "issue_reference_urls": [
+                "https://owasp.org/www-community/vulnerabilities/SQL_Injection"
+            ],
+            "severity": "major",
+            "severity_reason": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities."
+        },
+        {
+            "short_description": "Potential SQL Injection",
+            "detailed_explaination": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities.",
+            "suggestion": "Use parameterized queries or prepared statements to prevent SQL injection.",
+            "issue_line_begin": 27,
+            "issue_line_end": 31,
+            "issue_reference_urls": [
+                "https://owasp.org/www-community/vulnerabilities/SQL_Injection"
+            ],
+            "severity": "major",
+            "severity_reason": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities."
+        },
+        {
+            "short_description": "Potential SQL Injection",
+            "detailed_explaination": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities.",
+            "suggestion": "Use parameterized queries or prepared statements to prevent SQL injection.",
+            "issue_line_begin": 38,
+            "issue_line_end": 42,
+            "issue_reference_urls": [
+                "https://owasp.org/www-community/vulnerabilities/SQL_Injection"
+            ],
+            "severity": "major",
+            "severity_reason": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities."
+        },
+        {
+            "short_description": "Potential SQL Injection",
+            "detailed_explaination": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities.",
+            "suggestion": "Use parameterized queries or prepared statements to prevent SQL injection.",
+            "issue_line_begin": 49,
+            "issue_line_end": 53,
+            "issue_reference_urls": [
+                "https://owasp.org/www-community/vulnerabilities/SQL_Injection"
+            ],
+            "severity": "major",
+            "severity_reason": "The code directly uses user input without proper sanitization or parameterized queries, which can lead to SQL injection vulnerabilities."
+        }
+    ],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.*;\nimport com.bdqn.entity.*;\nimport com.bdqn.service.CheckoutService;\nimport com.bdqn.utils.UUIDUtils;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\n\n@Service\n@Transactional\npublic class CheckoutServiceImpl implements CheckoutService {\n\n    @Resource\n    private CheckoutMapper checkoutMapper;\n\n    @Resource\n    private CheckinMapper checkinMapper;\n\n    @Resource\n    private OrdersMapper ordersMapper;\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    @Resource\n    private RoomMapper roomMapper;\n\n    /**\n     * 添加退房记录\n     *\n     * @param checkout\n     * @return\n     */\n    public int addCheckout(Checkout checkout) {\n        try {\n            //#1.新增一条退房记录\n            checkout.setCreateDate(new Date());//创建时间（什么时候操作了办理退房）\n            checkout.setCheckOutNumber(UUIDUtils.randomUUID());\n            //调用新增退房记录的方法\n            int count = checkoutMapper.addCheckout(checkout);\n            if(count \u003e 0){\n\n                //#2.修改t_checkin中status状态，修改成2(已离店)\n                Checkin checkin = checkinMapper.findById(checkout.getCheckInId());\n                checkin.setStatus(2);//已离店\n                //调用修改入住订单的方法\n                checkinMapper.updateCheckin(checkin);\n\n                //#3.修改t_orders表中的status状态，修改成4(订单已完成)\n                Orders orders = new Orders();\n                orders.setStatus(4);//订单已完成\n                orders.setId(checkin.getOrdersid());\n                //调用修改订单的方法\n                ordersMapper.updateOrders(orders);\n\n                //#4.修改t_room_type表中的可用房间数(+1),已入住房间数-1\n                RoomType roomType = roomTypeMapper.findById(checkin.getRoomTypeId());\n                roomType.setAvailableRooms(roomType.getAvailableRooms() + 1);\n                roomType.setCurrentOccupancy(roomType.getCurrentOccupancy() - 1);\n                roomTypeMapper.updateRoomType(roomType);\n\n                //#5.修改t_room表中的状态，修改成空闲\n                Room room = roomMapper.findById(checkin.getRoomId());\n                room.setStatus(\"空闲\");\n                roomMapper.updateRoom(room);\n            }\n\n            return count;\n        } catch (Exception e) {\n            // Handle exception appropriately, e.g., log it and rethrow or handle it as needed\n            e.printStackTrace();\n            return 0;\n        }\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.*;\nimport com.bdqn.entity.*;\nimport com.bdqn.service.CheckoutService;\nimport com.bdqn.utils.UUIDUtils;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.Date;\n\n@Service\n@Transactional\npublic class CheckoutServiceImpl implements CheckoutService {\n\n    @Resource\n    private CheckoutMapper checkoutMapper;\n\n    @Resource\n    private CheckinMapper checkinMapper;\n\n    @Resource\n    private OrdersMapper ordersMapper;\n\n    @Resource\n    private RoomTypeMapper roomTypeMapper;\n\n    @Resource\n    private RoomMapper roomMapper;\n\n    /**\n     * 添加退房记录\n     *\n     * @param checkout\n     * @return\n     */\n    public int addCheckout(Checkout checkout) {\n        try {\n            //#1.新增一条退房记录\n            checkout.setCreateDate(new Date());//创建时间（什么时候操作了办理退房）\n            checkout.setCheckOutNumber(UUIDUtils.randomUUID());\n            //调用新增退房记录的方法\n            int count = checkoutMapper.addCheckout(checkout);\n            if(count \u003e 0){\n\n                //#2.修改t_checkin中status状态，修改成2(已离店)\n                Checkin checkin = checkinMapper.findById(checkout.getCheckInId());\n                checkin.setStatus(2);//已离店\n                //调用修改入住订单的方法\n                checkinMapper.updateCheckin(checkin);\n\n                //#3.修改t_orders表中的status状态，修改成4(订单已完成)\n                Orders orders = new Orders();\n                orders.setStatus(4);//订单已完成\n                orders.setId(checkin.getOrdersid());\n                //调用修改订单的方法\n                ordersMapper.updateOrders(orders);\n\n                //#4.修改t_room_type表中的可用房间数(+1),已入住房间数-1\n                RoomType roomType = roomTypeMapper.findById(checkin.getRoomtypeid());\n                roomType.setAvilablenum(roomType.getAvilablenum() + 1);//可用房间数+1\n                roomType.setLivednum(roomType.getLivednum() - 1);//已入住房间数-1\n                //调用修改房型的方法\n                roomTypeMapper.updateRoomType(roomType);\n                 //注意：退房对象Checkout中无法获取订单主键ID，也无法获取房型主键ID\n\n\n                //修改房间状态(修改成可预订的状态)\n                Room room = new Room();\n                room.setId(checkin.getRoomid().intValue());//房间编号\n                room.setStatus(3);//可预订状态\n                roomMapper.updateRoom(room);\n            }\n        } catch (Exception e) {\n            // 记录详细的错误信息\n            e.printStackTrace();\n            // 或者记录日志，具体处理方式根据业务需求而定\n        }\n\n        return count;\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/CheckoutServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 20710562368,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

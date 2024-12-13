@@ -58,26 +58,22 @@ public class CheckoutServiceImpl implements CheckoutService {
                 ordersMapper.updateOrders(orders);
 
                 //#4.修改t_room_type表中的可用房间数(+1),已入住房间数-1
-                RoomType roomType = roomTypeMapper.findById(checkin.getRoomtypeid());
-                roomType.setAvilablenum(roomType.getAvilablenum() + 1);//可用房间数+1
-                roomType.setLivednum(roomType.getLivednum() - 1);//已入住房间数-1
-                //调用修改房型的方法
+                RoomType roomType = roomTypeMapper.findById(checkin.getRoomTypeId());
+                roomType.setAvailableRooms(roomType.getAvailableRooms() + 1);
+                roomType.setCurrentOccupancy(roomType.getCurrentOccupancy() - 1);
                 roomTypeMapper.updateRoomType(roomType);
-                 //注意：退房对象Checkout中无法获取订单主键ID，也无法获取房型主键ID
 
-
-                //修改房间状态(修改成可预订的状态)
-                Room room = new Room();
-                room.setId(checkin.getRoomid().intValue());//房间编号
-                room.setStatus(3);//可预订状态
+                //#5.修改t_room表中的状态，修改成空闲
+                Room room = roomMapper.findById(checkin.getRoomId());
+                room.setStatus("空闲");
                 roomMapper.updateRoom(room);
             }
-        } catch (Exception e) {
-            // 记录详细的错误信息
-            e.printStackTrace();
-            // 或者记录日志，具体处理方式根据业务需求而定
-        }
 
-        return count;
+            return count;
+        } catch (Exception e) {
+            // Handle exception appropriately, e.g., log it and rethrow or handle it as needed
+            e.printStackTrace();
+            return 0;
+        }
     }
 }

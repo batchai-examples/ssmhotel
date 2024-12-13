@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.MenuMapper;\nimport com.bdqn.entity.Menu;\nimport com.bdqn.service.MenuService;\nimport com.bdqn.vo.MenuVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n\n@Service\n@Transactional\npublic class MenuServiceImpl implements MenuService {\n\n    @Resource\n    private MenuMapper menuMapper;\n\n    /**\n     * 查询所有菜单列表\n     *\n     * @return\n     */\n    public List\u003cMenu\u003e findMenuList() {\n        return menuMapper.findMenuList();\n    }\n\n    public List\u003cInteger\u003e findMenuIdListByRoleId(int roleId) {\n        return menuMapper.findMenuIdListByRoleId(roleId);\n    }\n\n    public List\u003cMenu\u003e findMenuByMenuId(List\u003cInteger\u003e currentRoleMenuIds) {\n        return menuMapper.findMenuByMenuId(currentRoleMenuIds);\n    }\n\n    public List\u003cMenu\u003e findMenuListByPage(MenuVo menuVo) {\n        return menuMapper.findMenuListByPage(menuVo);\n    }\n\n    public int addMenu(Menu menu) {\n        //如果没有选择父级菜单，默认设置父级菜单为0\n        if(menu.getPid()==null){\n            menu.setPid(0);\n        }\n        menu.setTarget(\"_self\");//设置打开方式，没有作用\n        return menuMapper.addMenu(menu);\n    }\n\n    public int updateMenu(Menu menu) {\n        return menuMapper.updateMenu(menu);\n    }\n\n    public int deleteById(int id) {\n        return menuMapper.deleteById(id);\n    }\n\n    public int getMenuCountByMenuId(Integer id) {\n        return menuMapper.getMenuCountByMenuId(id);\n    }\n\n    public List\u003cMenu\u003e findMenuListByEmployeeId(Integer employeeId) {\n        return menuMapper.findMenuListByEmployeeId(employeeId);\n    }\n}\n",
+    "original_code": "package com.bdqn.service.impl;\n\nimport com.bdqn.dao.MenuMapper;\nimport com.bdqn.entity.Menu;\nimport com.bdqn.service.MenuService;\nimport com.bdqn.vo.MenuVo;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport javax.annotation.Resource;\nimport java.util.List;\n\n\n@Service\n@Transactional\npublic class MenuServiceImpl implements MenuService {\n\n    @Resource\n    private MenuMapper menuMapper;\n\n    /**\n     * 查询所有菜单列表\n     *\n     * @return\n     */\n    public List\u003cMenu\u003e findMenuList() {\n        return menuMapper.findMenuList();\n    }\n\n    public List\u003cInteger\u003e findMenuIdListByRoleId(int roleId) {\n        return menuMapper.findMenuIdListByRoleId(roleId);\n    }\n\n    public List\u003cMenu\u003e findMenuByMenuId(List\u003cInteger\u003e currentRoleMenuIds) {\n        return menuMapper.findMenuByMenuId(currentRoleMenuIds);\n    }\n\n    public List\u003cMenu\u003e findMenuListByPage(MenuVo menuVo) {\n        return menuMapper.findMenuListByPage(menuVo);\n    }\n\n    public int addMenu(Menu menu) {\n        //如果没有选择父级菜单，默认设置父级菜单为0\n        if(menu.getPid()==null){\n            menu.setPid(0);\n        }\n        menu.setTarget(\"_self\");//设置打开方式，没有作用\n        return menuMapper.addMenu(menu);\n    }\n\n    public int updateMenu(Menu menu) {\n        return menuMapper.updateMenu(menu);\n    }\n\n    public int deleteById(int id) {\n        return menuMapper.deleteById(id);\n    }\n\n    public int getMenuCountByMenuId(Integer id) {\n        return menuMapper.getMenuCountByMenuId(id);\n    }\n\n    public List\u003cMenu\u003e findMenuListByEmployeeId(Integer employeeId) {\n        return menuMapper.findMenuListByEmployeeId(employeeId);\n    }\n}\n",
+    "path": "src/main/java/com/bdqn/service/impl/MenuServiceImpl.java",
+    "model_usage_metrics": {
+        "Duration": 1053009455,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}

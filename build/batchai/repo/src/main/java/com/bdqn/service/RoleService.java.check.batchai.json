@@ -1,0 +1,26 @@
+{
+    "has_issue": false,
+    "overall_severity": "",
+    "issues": [],
+    "fixed_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Role;\nimport com.bdqn.vo.RoleVo;\n\nimport java.util.List;\nimport java.util.Map;\n\npublic interface RoleService {\n    /**\n     * 查询角色列表\n     * @param roleVo\n     * @return\n     */\n    List\u003cRole\u003e findRoleList(RoleVo roleVo);\n\n    /**\n     * 添加角色\n     * @param role\n     * @return\n     */\n    int addRole(Role role);\n\n    /**\n     * 修改角色\n     * @param role\n     * @return\n     */\n    int updateRole(Role role);\n\n    /**\n     * 删除角色\n     * @param id\n     * @return\n     */\n    int deleteById(Integer id);\n\n    /**\n     * 保存角色菜单关系\n     * @param ids\n     * @param roleId\n     * @return\n     */\n    int saveRoleMenu(String ids, Integer roleId);\n\n    /**\n     * 查询所有角色列表\n     * @return\n     */\n    List\u003cMap\u003cString,Object\u003e\u003e findRoleListByMap();\n\n    /**\n     * 根据员工ID查询该员工拥有的角色列表\n     * @param employeeId\n     * @return\n     */\n    List\u003cInteger\u003e findEmployeeRoleByEmployeeId(Integer employeeId);\n}\n",
+    "original_code": "package com.bdqn.service;\n\nimport com.bdqn.entity.Role;\nimport com.bdqn.vo.RoleVo;\n\nimport java.util.List;\nimport java.util.Map;\n\npublic interface RoleService {\n    /**\n     * 查询角色列表\n     * @param roleVo\n     * @return\n     */\n    List\u003cRole\u003e findRoleList(RoleVo roleVo);\n\n    /**\n     * 添加角色\n     * @param role\n     * @return\n     */\n    int addRole(Role role);\n\n    /**\n     * 修改角色\n     * @param role\n     * @return\n     */\n    int updateRole(Role role);\n\n    /**\n     * 删除角色\n     * @param id\n     * @return\n     */\n    int deleteById(Integer id);\n\n    /**\n     * 保存角色菜单关系\n     * @param ids\n     * @param roleId\n     * @return\n     */\n    int saveRoleMenu(String ids, Integer roleId);\n\n    /**\n     * 查询所有角色列表\n     * @return\n     */\n    List\u003cMap\u003cString,Object\u003e\u003e findRoleListByMap();\n\n    /**\n     * 根据员工ID查询该员工拥有的角色列表\n     * @param employeeId\n     * @return\n     */\n    List\u003cInteger\u003e findEmployeeRoleByEmployeeId(Integer employeeId);\n}\n",
+    "path": "src/main/java/com/bdqn/service/RoleService.java",
+    "model_usage_metrics": {
+        "Duration": 1041318286,
+        "OpenAiUsage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0,
+            "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+            }
+        }
+    }
+}
